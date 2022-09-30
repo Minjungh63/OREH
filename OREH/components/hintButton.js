@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 export const HintButton = () => {
   return (
     <Pressable
-      style={{ flex: 0.1, alignItems: 'flex-end' }}
+      style={{ alignItems: 'flex-end' }}
       onPress={() => {
         Linking.openURL('https://open.kakao.com/o/g7bf0bze')
       }}

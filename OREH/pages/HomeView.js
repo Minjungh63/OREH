@@ -7,15 +7,17 @@ import { PARAGRAPH } from '../paragraph'
 const HomeView = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <View>
-        <Text style={styles.basicText}>OREH(오래)</Text>
-        <Text style={styles.titleText}>Ep. 독립운동가의 일기</Text>
+      <View style={{ alignItems: 'center' }}>
+        <View>
+          <Text style={styles.basicText}>OREH(오래)</Text>
+          <Text style={styles.titleText}>Ep. 독립운동가의 일기</Text>
+        </View>
       </View>
       <Box text={PARAGRAPH.notice} />
       <Button
         navigation={navigation}
         text={'시작'}
-        viewName={'questStartView'}
+        viewName={'QuestStartView'}
       />
     </View>
   )
