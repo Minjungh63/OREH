@@ -1,11 +1,16 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useContext, useState } from 'react'
-import { View, Pressable } from 'react-native'
+import { View, Pressable, Text } from 'react-native'
+import styles from '../pages/styles'
 import UserContext from '../service/UserContext'
 
-export const ShortHint = ({ setHintOpen }) => {
+export const ShortHint = ({
+  setHintOpen,
+  setIsHintFin,
+  useHint,
+  setUseHint,
+}) => {
   const userContext = useContext(UserContext)
-  const [useHint, setUseHint] = useState(false)
   return (
     <View
       style={{
@@ -14,21 +19,24 @@ export const ShortHint = ({ setHintOpen }) => {
       }}
     >
       <Pressable
-        style={{ alignItems: 'flex-end' }}
-        onPress={() => {
-          setHintOpen(true)
-          {
-            !useHint &&
-              setUseHint(true) &&
-              userContext.setHintCount(userContext.hintCount + 1)
+        style={{ alignItems: 'center' }}
+        onPressIn={() => {
+          if (userContext.hintCount >= 3) {
+            if (useHint) setHintOpen(true)
+            else setIsHintFin(true)
+          } else {
+            setHintOpen(true)
+            !useHint && userContext.setHintCount(userContext.hintCount + 1)
           }
         }}
+        onPressOut={() => !useHint && setUseHint(true)}
       >
         <MaterialCommunityIcons
           name="lightbulb-on-outline"
-          size={35}
+          size={30}
           color="yellow"
         />
+        <Text style={styles.hintCountText}>({userContext.hintCount}/3)</Text>
       </Pressable>
     </View>
   )

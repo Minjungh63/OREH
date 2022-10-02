@@ -9,10 +9,14 @@ export const ModalWindow = ({ open, setOpen, text, isHint }) => {
       modalDidClose={() => setOpen(!open)}
       closeOnTouchOutside={true}
       disableOnBackPress={true}
-      overlayStyle={{
-        backgroundColor: 'rgba(0, 0, 0, 0)',
-        flex: 1,
-      }}
+      overlayStyle={
+        isHint
+          ? styles.hintModalBackground
+          : {
+              backgroundColor: 'rgba(0, 0, 0, 0)',
+              flex: 1,
+            }
+      }
       modalStyle={isHint ? styles.hintModalBox : styles.wrongAnsModalBox}
     >
       <Text style={isHint ? styles.hintText : styles.modalText}>{text}</Text>

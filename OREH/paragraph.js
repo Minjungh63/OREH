@@ -15,4 +15,13 @@ export const PARAGRAPH = {
   quest1: 'Mission 01.',
   ans1: 'ans1',
   hint1: 'hint1',
+  quest2: 'Mission 02.',
+  ans2: 'ans2',
+  hint2: 'hint2',
+  quest3: 'Mission 03.',
+  ans3: 'ans3',
+  hint3: 'hint3',
+  quest4: 'Mission 04.',
+  ans4: 'ans4',
+  hint4: 'hint4',
 }

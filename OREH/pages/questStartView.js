@@ -1,10 +1,13 @@
+LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
+LogBox.ignoreAllLogs() //Ignore all log notifications
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, LogBox } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
 import { HintButton } from '../components/hintButton'
 import { Box } from '../components/box'
 import { PARAGRAPH } from '../paragraph'
+
 const QuestStartView = ({ navigation }) => {
   return (
     <View style={styles.questContainer}>
@@ -15,7 +18,12 @@ const QuestStartView = ({ navigation }) => {
         <Text style={styles.questText}>아래의 버튼을 눌러주세요.</Text>
       </View>
       <View style={{ flex: 0.1 }}>
-        <Button navigation={navigation} text={'시작'} viewName={'Quest1View'} />
+        <Button
+          navigation={navigation}
+          text={'시작'}
+          viewName={'Quest1View'}
+          startTimer={true}
+        />
       </View>
     </View>
   )

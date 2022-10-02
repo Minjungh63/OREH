@@ -57,6 +57,10 @@ const styles = StyleSheet.create({
     height: 280,
     borderRadius: 20,
   },
+  hintModalBackground: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    flex: 1,
+  },
   wrongAnsModalBox: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     justifyContent: 'center',
@@ -86,6 +90,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 21,
   },
+  hintCountText: {
+    fontFamily: THEME.basicFont,
+    color: 'yellow',
+    textAlign: 'center',
+    fontSize: 15,
+    fontWeight: '700',
+  },
   questText: {
     fontFamily: THEME.basicFont,
     color: THEME.quest_textColor,
@@ -110,6 +121,11 @@ const styles = StyleSheet.create({
   hintText: {
     fontFamily: THEME.basicFont,
     color: 'black',
+    fontSize: 20,
+  },
+  timerText: {
+    fontFamily: THEME.basicFont,
+    color: THEME.textColor,
     fontSize: 20,
   },
 })

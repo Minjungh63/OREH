@@ -1,5 +1,7 @@
+LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
+LogBox.ignoreAllLogs() //Ignore all log notifications
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, LogBox } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
 import { Box } from '../components/box'

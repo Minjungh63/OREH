@@ -35,7 +35,7 @@ const Quest1View = ({ navigation }) => {
       >
         <Text style={styles.basicText}>1918년 10월 1일</Text>
       </View>
-      <Box option={'quest'} text={PARAGRAPH.quest1} />
+      <Box option={'quest'} text={PARAGRAPH.quest4} />
       <View
         style={{
           flex: 0.1,
@@ -48,16 +48,16 @@ const Quest1View = ({ navigation }) => {
         <Button
           navigation={navigation}
           text={'Enter'}
-          viewName={'Quest2View'}
+          viewName={'HomeView'}
           inputAns={inputAns}
-          ans={PARAGRAPH.ans1}
+          ans={PARAGRAPH.ans4}
           setIsWrongAns={setIsWrongAns}
         />
       </View>
       <ModalWindow
         open={hintOpen}
         setOpen={setHintOpen}
-        text={PARAGRAPH.hint1}
+        text={PARAGRAPH.hint4}
         isHint={true}
       />
       <ModalWindow

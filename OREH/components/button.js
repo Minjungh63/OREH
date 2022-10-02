@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import { Text, Pressable, View } from 'react-native'
+import { useContext, useState } from 'react'
+import { Text, Pressable } from 'react-native'
 import styles from '../pages/styles.js'
+import UserContext from '../service/UserContext.js'
 
 export const Button = ({
   text,
@@ -9,16 +10,23 @@ export const Button = ({
   inputAns,
   ans,
   setIsWrongAns,
+  startTimer,
 }) => {
   const [pressed, setPressed] = useState(false)
+  const userContext = useContext(UserContext)
   const EnterAns = () => {
     if (text === 'Enter') {
-      if (ans === inputAns) {
+      if (ans === inputAns.trim()) {
         navigation.navigate(viewName)
       } else {
         setIsWrongAns(true)
       }
     } else {
+      if (startTimer) {
+        setInterval(() => {
+          userContext.setTimer((prevTimer) => prevTimer + 1)
+        }, 1000)
+      }
       navigation.navigate(viewName)
     }
   }
