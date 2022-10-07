@@ -1,14 +1,23 @@
 LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
 LogBox.ignoreAllLogs() //Ignore all log notifications
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { View, Text, LogBox, SafeAreaView } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
 import { HintButton } from '../components/hintButton'
 import { Box } from '../components/box'
 import { PARAGRAPH } from '../paragraph'
+import UserContext from '../service/UserContext'
+import { useIsFocused } from '@react-navigation/native'
 
 const QuestStartView = ({ navigation }) => {
+  const userContext = useContext(UserContext)
+  const isFocused = useIsFocused()
+  useEffect(() => {
+    userContext.setTimer(0)
+    userContext.setIsEnd(false)
+    userContext.setHintCount(0)
+  }, [isFocused])
   return (
     <SafeAreaView style={styles.questContainer}>
       <HintButton />
