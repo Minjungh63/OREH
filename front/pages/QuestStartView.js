@@ -18,12 +18,7 @@ const QuestStartView = ({ navigation }) => {
         <Text style={styles.questText}>아래의 버튼을 눌러주세요.</Text>
       </View>
       <View style={{ flex: 0.1 }}>
-        <Button
-          navigation={navigation}
-          text={'시작'}
-          viewName={'Quest1View'}
-          startTimer={true}
-        />
+        <Button navigation={navigation} text={'시작'} viewName={'Quest1View'} />
       </View>
     </View>
   )

@@ -24,6 +24,7 @@ const Quest1View = ({ navigation }) => {
         setIsHintFin={setIsHintFin}
         useHint={useHint}
         setUseHint={setUseHint}
+        timerStart={true}
       />
       <View
         style={{

@@ -10,7 +10,6 @@ export const Button = ({
   inputAns,
   ans,
   setIsWrongAns,
-  startTimer,
 }) => {
   const [pressed, setPressed] = useState(false)
   const userContext = useContext(UserContext)
@@ -22,11 +21,6 @@ export const Button = ({
         setIsWrongAns(true)
       }
     } else {
-      if (startTimer) {
-        setInterval(() => {
-          userContext.setTimer((prevTimer) => prevTimer + 1)
-        }, 1000)
-      }
       navigation.navigate(viewName)
     }
   }

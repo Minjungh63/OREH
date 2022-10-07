@@ -7,6 +7,7 @@ import Quest1View from './pages/Quest1View'
 import Quest2View from './pages/Quest2View'
 import Quest3View from './pages/Quest3View'
 import Quest4View from './pages/Quest4View'
+import ResultView from './pages/ResultView'
 import * as Font from 'expo-font'
 import UserContext from './service/UserContext'
 
@@ -14,13 +15,14 @@ export default function App() {
   const [appIsReady, setAppIsReady] = useState(false)
   const [hintCount, setHintCount] = useState(0)
   const [timer, setTimer] = useState(0)
-  const timerRef = useRef()
+  const [isEnd, setIsEnd] = useState(false)
   const valList = {
     hintCount,
     setHintCount,
     timer,
     setTimer,
-    timerRef,
+    isEnd,
+    setIsEnd,
   }
   let FontList = {
     NanumSquareR: require('./assets/fonts/NanumSquareR.ttf'),
@@ -56,6 +58,7 @@ export default function App() {
           <Stack.Screen name="Quest2View" component={Quest2View} />
           <Stack.Screen name="Quest3View" component={Quest3View} />
           <Stack.Screen name="Quest4View" component={Quest4View} />
+          <Stack.Screen name="ResultView" component={ResultView} />
         </Stack.Navigator>
       </NavigationContainer>
     </UserContext.Provider>

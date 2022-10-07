@@ -1,6 +1,6 @@
 LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
 LogBox.ignoreAllLogs() //Ignore all log notifications
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { View, Text, LogBox } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
@@ -9,14 +9,18 @@ import { Input } from '../components/Input'
 import { PARAGRAPH } from '../paragraph'
 import { ModalWindow } from '../components/modal'
 import { Header } from '../components/head'
+import UserContext from '../service/UserContext'
 
-const Quest4View = ({ navigation }) => {
+const ResultView = ({ navigation }) => {
   const [inputAns, setInputAns] = useState('')
   const [hintOpen, setHintOpen] = useState(false)
   const [isWrongAns, setIsWrongAns] = useState(false)
   const [isHintFin, setIsHintFin] = useState(false)
   const [useHint, setUseHint] = useState(false)
-
+  const userContext = useContext(UserContext)
+  useEffect(() => {
+    userContext.setIsEnd(true)
+  }, [])
   return (
     <View style={styles.questContainer}>
       <Header
@@ -48,7 +52,7 @@ const Quest4View = ({ navigation }) => {
         <Button
           navigation={navigation}
           text={'Enter'}
-          viewName={'ResultView'}
+          viewName={'HomeView'}
           inputAns={inputAns}
           ans={PARAGRAPH.ans4}
           setIsWrongAns={setIsWrongAns}
@@ -76,4 +80,4 @@ const Quest4View = ({ navigation }) => {
   )
 }
 
-export default Quest4View
+export default ResultView

@@ -3,7 +3,13 @@ import { HintButton } from './hintButton.js'
 import { ShortHint } from './shortHint.js'
 import { TimerMenu } from './timer.js'
 
-export const Header = ({ setHintOpen, setIsHintFin, useHint, setUseHint }) => {
+export const Header = ({
+  setHintOpen,
+  setIsHintFin,
+  useHint,
+  setUseHint,
+  timerStart,
+}) => {
   return (
     <View
       style={{
@@ -13,7 +19,7 @@ export const Header = ({ setHintOpen, setIsHintFin, useHint, setUseHint }) => {
         alignItems: 'center',
       }}
     >
-      <TimerMenu />
+      <TimerMenu start={timerStart} />
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <ShortHint
           setHintOpen={setHintOpen}

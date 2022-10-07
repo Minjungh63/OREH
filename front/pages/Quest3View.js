@@ -10,7 +10,7 @@ import { PARAGRAPH } from '../paragraph'
 import { ModalWindow } from '../components/modal'
 import { Header } from '../components/head'
 
-const Quest1View = ({ navigation }) => {
+const Quest3View = ({ navigation }) => {
   const [inputAns, setInputAns] = useState('')
   const [hintOpen, setHintOpen] = useState(false)
   const [isWrongAns, setIsWrongAns] = useState(false)
@@ -76,4 +76,4 @@ const Quest1View = ({ navigation }) => {
   )
 }
 
-export default Quest1View
+export default Quest3View
