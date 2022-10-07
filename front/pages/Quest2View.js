@@ -1,7 +1,7 @@
 LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
 LogBox.ignoreAllLogs() //Ignore all log notifications
 import React, { useState } from 'react'
-import { View, Text, LogBox } from 'react-native'
+import { View, Text, LogBox, SafeAreaView } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
 import { Box } from '../components/box'
@@ -18,7 +18,7 @@ const Quest2View = ({ navigation }) => {
   const [useHint, setUseHint] = useState(false)
 
   return (
-    <View style={styles.questContainer}>
+    <SafeAreaView style={styles.questContainer}>
       <Header
         setHintOpen={setHintOpen}
         setIsHintFin={setIsHintFin}
@@ -72,7 +72,7 @@ const Quest2View = ({ navigation }) => {
         text={'오답입니다.'}
         isHint={false}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 

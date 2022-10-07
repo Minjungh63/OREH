@@ -1,7 +1,7 @@
 LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
 LogBox.ignoreAllLogs() //Ignore all log notifications
 import React from 'react'
-import { View, Text, LogBox } from 'react-native'
+import { View, Text, LogBox, SafeAreaView } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
 import { HintButton } from '../components/hintButton'
@@ -10,7 +10,7 @@ import { PARAGRAPH } from '../paragraph'
 
 const QuestStartView = ({ navigation }) => {
   return (
-    <View style={styles.questContainer}>
+    <SafeAreaView style={styles.questContainer}>
       <HintButton />
       <Box option={'quest'} text={PARAGRAPH.questStart} />
       <View style={{ justifyContent: 'space-evenly', flex: 0.1 }}>
@@ -20,7 +20,7 @@ const QuestStartView = ({ navigation }) => {
       <View style={{ flex: 0.1 }}>
         <Button navigation={navigation} text={'시작'} viewName={'Quest1View'} />
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 

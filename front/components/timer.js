@@ -15,17 +15,7 @@ export const TimerMenu = ({ start }) => {
     )
   return (
     <Text style={styles.timerText}>
-      {parseInt(userContext.timer / 3600) / 10 >= 1
-        ? parseInt(userContext.timer / 3600)
-        : '0' + parseInt(userContext.timer / 3600)}{' '}
-      :{' '}
-      {(parseInt(userContext.timer / 60) % 60) / 10 >= 1
-        ? parseInt(userContext.timer / 60) % 60
-        : '0' + (parseInt(userContext.timer / 60) % 60)}
-      :{' '}
-      {(userContext.timer % 60) / 10 >= 1
-        ? userContext.timer % 60
-        : '0' + (userContext.timer % 60)}
+      {new Date(userContext.timer * 1000).toISOString().substr(11, 8)}
     </Text>
   )
 }
