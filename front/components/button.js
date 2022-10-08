@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import { Text, Pressable } from 'react-native'
 import styles from '../pages/styles.js'
 import UserContext from '../service/UserContext.js'
-
+import { STRING } from '../string'
 export const Button = ({
   text,
   navigation,
@@ -11,11 +11,15 @@ export const Button = ({
   ans,
   setIsWrongAns,
 }) => {
-  const [pressed, setPressed] = useState(false)
   const userContext = useContext(UserContext)
+  const [pressed, setPressed] = useState(false)
   const EnterAns = () => {
-    if (text === 'Enter') {
+    if (text === STRING.quest_buttonText) {
       if (ans === inputAns.trim()) {
+        userContext.setRecordList([
+          ...userContext.recordList,
+          userContext.timer,
+        ])
         navigation.navigate(viewName)
       } else {
         setIsWrongAns(true)
@@ -28,7 +32,7 @@ export const Button = ({
     <Pressable
       style={[
         pressed ? styles.PressedButtonBox : styles.buttonBox,
-        text === 'Enter' && { width: '30%' },
+        text === STRING.quest_buttonText && { width: '30%' },
       ]}
       onPressIn={() => setPressed(true)}
       onPressOut={() => setPressed(false)}

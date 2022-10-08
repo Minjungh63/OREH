@@ -6,9 +6,9 @@ import styles from './styles'
 import { Button } from '../components/button'
 import { Box } from '../components/box'
 import { Input } from '../components/Input'
-import { PARAGRAPH } from '../paragraph'
 import { ModalWindow } from '../components/modal'
 import { Header } from '../components/head'
+import { STRING } from '../string'
 
 const Quest4View = ({ navigation }) => {
   const [inputAns, setInputAns] = useState('')
@@ -35,7 +35,7 @@ const Quest4View = ({ navigation }) => {
       >
         <Text style={styles.basicText}>1918년 10월 1일</Text>
       </View>
-      <Box option={'quest'} text={PARAGRAPH.quest4} />
+      <Box option={'quest'} text={STRING.quest4} />
       <View
         style={{
           flex: 0.1,
@@ -47,29 +47,29 @@ const Quest4View = ({ navigation }) => {
         <Input setInputAns={setInputAns} />
         <Button
           navigation={navigation}
-          text={'Enter'}
+          text={STRING.quest_buttonText}
           viewName={'ResultView'}
           inputAns={inputAns}
-          ans={PARAGRAPH.ans4}
+          ans={STRING.ans4}
           setIsWrongAns={setIsWrongAns}
         />
       </View>
       <ModalWindow
         open={hintOpen}
         setOpen={setHintOpen}
-        text={PARAGRAPH.hint4}
+        text={STRING.hint4}
         isHint={true}
       />
       <ModalWindow
         open={isHintFin}
         setOpen={setIsHintFin}
-        text={'힌트를 모두 사용하셨습니다.'}
+        text={STRING.hintEndModalText}
         isHint={false}
       />
       <ModalWindow
         open={isWrongAns}
         setOpen={setIsWrongAns}
-        text={'오답입니다.'}
+        text={STRING.wrongAnsModalText}
         isHint={false}
       />
     </SafeAreaView>

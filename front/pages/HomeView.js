@@ -5,7 +5,8 @@ import { View, Text, LogBox, SafeAreaView } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
 import { Box } from '../components/box'
-import { PARAGRAPH } from '../paragraph'
+import { STRING } from '../string'
+
 const HomeView = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
@@ -15,10 +16,10 @@ const HomeView = ({ navigation }) => {
           <Text style={styles.titleText}>Ep. 독립운동가의 일기</Text>
         </View>
       </View>
-      <Box text={PARAGRAPH.notice} />
+      <Box text={STRING.guide} />
       <Button
         navigation={navigation}
-        text={'시작'}
+        text={STRING.start_buttonText}
         viewName={'QuestStartView'}
       />
     </SafeAreaView>

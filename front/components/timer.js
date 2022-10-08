@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 import styles from '../pages/styles.js'
 import useInterval from '../service/useInterval.js'
 import UserContext from '../service/UserContext.js'
-
+import timeFormat from '../service/timeFormat.js'
 export const TimerMenu = ({ start }) => {
   const userContext = useContext(UserContext)
   start &&
@@ -13,9 +13,5 @@ export const TimerMenu = ({ start }) => {
       },
       userContext.isEnd === false ? 1000 : null,
     )
-  return (
-    <Text style={styles.timerText}>
-      {new Date(userContext.timer * 1000).toISOString().substr(11, 8)}
-    </Text>
-  )
+  return <Text style={styles.timerText}>{timeFormat(userContext.timer)}</Text>
 }

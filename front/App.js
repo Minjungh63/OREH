@@ -12,17 +12,23 @@ import * as Font from 'expo-font'
 import UserContext from './service/UserContext'
 
 export default function App() {
+  const [userId, setUserId] = useState(1)
   const [appIsReady, setAppIsReady] = useState(false)
   const [hintCount, setHintCount] = useState(0)
   const [timer, setTimer] = useState(0)
   const [isEnd, setIsEnd] = useState(false)
+  const [recordList, setRecordList] = useState([])
   const valList = {
+    userId,
+    setUserId,
     hintCount,
     setHintCount,
     timer,
     setTimer,
     isEnd,
     setIsEnd,
+    recordList,
+    setRecordList,
   }
   let FontList = {
     NanumSquareR: require('./assets/fonts/NanumSquareR.ttf'),
