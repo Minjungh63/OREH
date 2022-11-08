@@ -4,5 +4,7 @@
   "packagerPort": 19000,
   "expoServerNgrokUrl": "https://xj-2ip.minjungjung.oreh.exp.direct",
   "packagerNgrokUrl": "https://xj-2ip.minjungjung.oreh.exp.direct",
-  "ngrokPid": 25420
+  "ngrokPid": 19496,
+  "packagerPid": null,
+  "webpackServerPort": null
 }
