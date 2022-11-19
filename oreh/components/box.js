@@ -29,7 +29,7 @@ export const Box = ({ text, text2, option }) => {
              <Icon name="chevron-back-outline" size={35} color={THEME.buttonColor} />
           </Pressable>):<View></View>}
           <Pressable style={{}} onPress={()=>setPressed(2)}>
-            <Icon name="chevron-forward-outline" size={3ci5} color={THEME.buttonColor} />
+            <Icon name="chevron-forward-outline" size={35} color={THEME.buttonColor} />
           </Pressable>
           </View>
         </View>
