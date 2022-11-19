@@ -3,28 +3,22 @@ import { THEME } from '../theme'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: '8%',
-
-    backgroundColor: THEME.backgroundColor,
+    padding: '6%',
     justifyContent: 'space-evenly',
   },
   questContainer: {
     flex: 1,
     padding: '8%',
-
     backgroundColor: THEME.quest_backgroundColor,
     justifyContent: 'space-evenly',
   },
   textBox: {
-    backgroundColor: THEME.textColor,
-    flex: 0.7,
+    flex: 0.8,
     paddingHorizontal: 10,
     paddingVertical: 25,
-    borderRadius: 30,
   },
   questBox: {
-    backgroundColor: THEME.quest_boxColor,
-    flex: 0.7,
+    flex: 0.8,
     paddingHorizontal: 10,
     paddingVertical: 25,
     borderRadius: 30,
@@ -78,11 +72,10 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 10,
   },
-  titleText: {
-    fontFamily: THEME.basicFont,
-    color: THEME.textColor,
+  titleNoticeText: {
+    fontFamily: THEME.titleFont,
+    color: THEME.lightBeige,
     fontSize: 35,
-    fontWeight: '700',
   },
   buttonText: {
     fontFamily: THEME.buttonFont,
@@ -107,6 +100,7 @@ const styles = StyleSheet.create({
     fontFamily: THEME.basicFont,
     color: '#000000',
     fontSize: 15,
+    textAlign: 'center',
   },
   basicText: {
     fontFamily: THEME.basicFont,
@@ -128,5 +122,15 @@ const styles = StyleSheet.create({
     color: THEME.textColor,
     fontSize: 20,
   },
+  bgImage:{
+    width:'100%',
+    height:'100%',
+  },
+  boxBgImage:{
+    width:'100%',
+    height:'100%',
+    borderRadius: 10,
+    overflow: 'hidden',
+  }
 })
 export default styles

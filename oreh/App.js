@@ -33,6 +33,8 @@ export default function App() {
   let FontList = {
     NanumSquareR: require('./assets/fonts/NanumSquareR.ttf'),
     HBIOS_SYS: require('./assets/fonts/HBIOS-SYS.ttf'),
+    Kim_Gu: require('./assets/fonts/Kim-Gu.ttf'),
+    NanumMyeongjo: require('./assets/fonts/NanumMyeongjo.ttf'),
   }
   useEffect(() => {
     async function prepare() {

@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19000,
-  "expoServerNgrokUrl": "https://xj-2ip.minjungjung.oreh.exp.direct",
-  "packagerNgrokUrl": "https://xj-2ip.minjungjung.oreh.exp.direct",
-  "ngrokPid": 19496,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "packagerPid": null,
   "webpackServerPort": null
 }
