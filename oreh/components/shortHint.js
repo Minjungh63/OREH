@@ -1,4 +1,4 @@
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { FontAwesome } from '@expo/vector-icons';
 import { useContext, useState } from 'react'
 import { View, Pressable, Text } from 'react-native'
 import styles from '../pages/styles'
@@ -31,11 +31,7 @@ export const ShortHint = ({
         }}
         onPressOut={() => !useHint && setUseHint(true)}
       >
-        <MaterialCommunityIcons
-          name="lightbulb-on-outline"
-          size={30}
-          color="yellow"
-        />
+        <FontAwesome name="flag" size={25} color="white" />
         <Text style={styles.hintCountText}>({userContext.hintCount}/3)</Text>
       </Pressable>
     </View>

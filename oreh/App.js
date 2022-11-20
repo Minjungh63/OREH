@@ -34,7 +34,7 @@ export default function App() {
     NanumSquareR: require('./assets/fonts/NanumSquareR.ttf'),
     HBIOS_SYS: require('./assets/fonts/HBIOS-SYS.ttf'),
     Kim_Gu: require('./assets/fonts/Kim-Gu.ttf'),
-    NanumMyeongjo: require('./assets/fonts/NanumMyeongjo.ttf'),
+    NanumMyeongjo: require('./assets/fonts/NanumMyeongjoBold.ttf'),
   }
   useEffect(() => {
     async function prepare() {

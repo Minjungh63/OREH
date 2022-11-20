@@ -1,32 +1,49 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform, Dimensions } from 'react-native'
 import { THEME } from '../theme'
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height:Dimensions.get('window').height,
+    width: Dimensions.get('window').width,
     padding: '6%',
     justifyContent: 'space-evenly',
   },
   questContainer: {
-    flex: 1,
+    height:Dimensions.get('window').height*0.7,
     padding: '8%',
-    backgroundColor: THEME.quest_backgroundColor,
     justifyContent: 'space-evenly',
   },
   textBox: {
-    flex: 0.8,
+    flex:0.8,
     paddingHorizontal: 10,
-    paddingVertical: 25,
+    paddingVertical: 10,
   },
   questBox: {
-    flex: 0.8,
-    paddingHorizontal: 10,
-    paddingVertical: 25,
+    flex:0.65,
+    paddingLeft: 2,
+    paddingTop: 2,
+    paddingRight:6,
+    paddingBottom:6,
     borderRadius: 30,
+    backgroundColor:'rgba(0, 0, 0, 0.0000001)',
     justifyContent: 'center',
-    marginBottom: 20,
+         ...Platform.select({
+              ios: {
+                shadowColor: "#000",
+                shadowOffset: {
+                	width: 0,
+                	height: 1,
+                },
+                shadowOpacity: 0.22,
+                shadowRadius: 2.22,
+              },
+              android: {
+                elevation:3
+              },
+            }),
   },
   inputBox: {
-    backgroundColor: THEME.textColor,
+    backgroundColor: 'white',
+    color:THEME.buttonColor,
     fontSize: 21,
     borderRadius: 10,
     height: 40,
@@ -43,7 +60,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   hintModalBox: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#F5F5F5',
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
@@ -79,20 +96,19 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: THEME.buttonFont,
-    color: THEME.textColor,
+    color: THEME.lightBeige,
     textAlign: 'center',
     fontSize: 21,
   },
   hintCountText: {
-    fontFamily: THEME.basicFont,
-    color: 'yellow',
+    fontFamily: THEME.titleFont,
+    color: 'white',
     textAlign: 'center',
     fontSize: 15,
-    fontWeight: '700',
   },
   questText: {
     fontFamily: THEME.basicFont,
-    color: THEME.quest_textColor,
+    color: THEME.textColor,
     textAlign: 'center',
     fontSize: 19,
   },
@@ -109,13 +125,15 @@ const styles = StyleSheet.create({
   },
   modalText: {
     fontFamily: THEME.basicFont,
-    color: THEME.textColor,
+    color: 'white',
     fontSize: 20,
+    textAlign:'center',
   },
   hintText: {
     fontFamily: THEME.basicFont,
-    color: 'black',
+    color: THEME.textColor,
     fontSize: 20,
+    textAlign:'center',
   },
   timerText: {
     fontFamily: THEME.basicFont,
@@ -131,6 +149,12 @@ const styles = StyleSheet.create({
     height:'100%',
     borderRadius: 10,
     overflow: 'hidden',
-  }
+  },
+  questImage:{
+      width:'100%',
+      height:'100%',
+      borderRadius: 10,
+      resizeMode:'contain'
+    }
 })
 export default styles

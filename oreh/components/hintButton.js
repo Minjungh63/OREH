@@ -1,5 +1,5 @@
 import { Pressable, Linking } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons'
+import { Ionicons } from '@expo/vector-icons';
 
 export const HintButton = () => {
   return (
@@ -9,7 +9,7 @@ export const HintButton = () => {
         Linking.openURL('https://open.kakao.com/o/g7bf0bze')
       }}
     >
-      <Icon name="chatbubble-outline" size={30} color="white" />
+    <Ionicons name="chatbubble" size={28} color="white" />
     </Pressable>
   )
 }

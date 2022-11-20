@@ -1,8 +1,15 @@
 import Modal from 'react-native-simple-modal'
 import styles from '../pages/styles'
-import { Text } from 'react-native'
+import { Text, Pressable } from 'react-native'
+import {THEME} from '../theme'
+import {Button} from './button'
+import { View } from 'react-native'
+import {useState} from 'react'
+import {STRING} from '../string'
 
-export const ModalWindow = ({ open, setOpen, text, isHint }) => {
+export const ModalWindow = ({ open, setOpen, text, text2,isHint }) => {
+  const [pressed, setPressed] = useState(false)
+  const [hintNum, setHintNum] = useState(1)
   return (
     <Modal
       open={open}
@@ -19,7 +26,22 @@ export const ModalWindow = ({ open, setOpen, text, isHint }) => {
       }
       modalStyle={isHint ? styles.hintModalBox : styles.wrongAnsModalBox}
     >
-      <Text style={isHint ? styles.hintText : styles.modalText}>{text}</Text>
+    <View style={{flex:1,width:'100%',justifyContent:'space-evenly'}}>
+      {hintNum ==1 ? <Text style={isHint ? styles.hintText : styles.modalText}>{text}</Text>
+      : <Text style={isHint ? styles.hintText : styles.modalText}>{text2}</Text>}
+        {isHint&&<Pressable
+            style={[
+              pressed ? styles.PressedButtonBox : styles.buttonBox,
+              { width: '70%' },
+            ]}
+            onPressIn={() => setPressed(true)}
+            onPressOut={() => setPressed(false)}
+            onPress={()=>hintNum==1 ? setHintNum(2): setHintNum(1)}
+          >
+            {hintNum==1 ? <Text style={[styles.buttonText,{fontSize:15}]}>다음 힌트 보기</Text>
+            : <Text style={[styles.buttonText,{fontSize:15}]}>이전 힌트 보기</Text>}
+          </Pressable>}
+      </View>
     </Modal>
   )
 }

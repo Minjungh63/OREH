@@ -21,7 +21,7 @@ const HomeView = ({ navigation }) => {
       <Button
         navigation={navigation}
         text={STRING.start_buttonText}
-        viewName={'QuestStartView'}
+        viewName={'Quest1View'}
       />
       </View>
       </View>

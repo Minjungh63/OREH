@@ -16,11 +16,12 @@ export const Header = ({
         flex: 0.05,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: 'flex-start',
+        paddingTop:10
       }}
     >
       <TimerMenu start={timerStart} />
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
         <ShortHint
           setHintOpen={setHintOpen}
           setIsHintFin={setIsHintFin}
