@@ -1,7 +1,7 @@
 LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
 LogBox.ignoreAllLogs() //Ignore all log notifications
 import React, { useState } from 'react'
-import { View, Text, LogBox, SafeAreaView, ImageBackground, Dimensions } from 'react-native'
+import { View, Text, LogBox, SafeAreaView, ImageBackground, Dimensions,StatusBar  } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
 import { Box } from '../components/box'
@@ -19,9 +19,8 @@ const Quest1View = ({ navigation }) => {
   const [useHint, setUseHint] = useState(false)
 
   return (
-  <KeyboardAwareScrollView contentContainerStyle={{height:Dimensions.get('screen').height, width:Dimensions.get("window").width}} resetScrollToCoords={{ x: 0, y: 0 }} scrollEnabled={false}>
-    <SafeAreaView>
-    <ImageBackground source={require("../assets/background.jpg")} style={styles.bgImage} >
+  <KeyboardAwareScrollView contentContainerStyle={{height:Dimensions.get('window').height+StatusBar.currentHeight, width:Dimensions.get("window").width}} resetScrollToCoords={{ x: 0, y: 0 }} scrollEnabled={false}>
+    <ImageBackground source={require("../assets/background.jpg")} style={[styles.bgImage,{height:Dimensions.get('screen').height}]} >
     <View style={styles.container}>
       <Header
         setHintOpen={setHintOpen}
@@ -41,7 +40,7 @@ const Quest1View = ({ navigation }) => {
       >
         <Text style={styles.basicText}>1918년 10월 1일</Text>
       </View>
-      <Box option={'quest'} img = {require("../assets/quest_img/img1.png")} text={STRING.quest1} />
+      <Box option={'quest'} img = {require("../assets/quest_img/questImg1_2.png")} img2 = {require("../assets/quest_img/questImg1_1.png")} hintNum={"Mission 01."}text={STRING.quest1} />
       <View
         style={{
           flex: 0.05,
@@ -81,7 +80,6 @@ const Quest1View = ({ navigation }) => {
       />
       </View>
       </ImageBackground>
-    </SafeAreaView>
     </KeyboardAwareScrollView>
   )
 }

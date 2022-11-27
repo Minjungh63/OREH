@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   questContainer: {
-    height:Dimensions.get('window').height*0.7,
-    padding: '8%',
+    height:Dimensions.get('window').height*0.6,
+    paddingHorizontal: '8%',
     justifyContent: 'space-evenly',
   },
   textBox: {
@@ -59,17 +59,39 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 10,
   },
+  startButtonBox: {
+      borderWidth:1,
+      borderColor:'white',
+      alignSelf: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      height: 40,
+      borderRadius: 10,
+    },
   hintModalBox: {
     backgroundColor: '#F5F5F5',
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
     width: '85%',
-    height: 280,
+    height: '70%',
     borderRadius: 20,
   },
   hintModalBackground: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    flex: 1,
+  },
+ popModalBox: {
+    backgroundColor: '#F5F5F5',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    width: '85%',
+    height: '25%',
+    borderRadius: 20,
+  },
+  popModalBackground: {
+    backgroundColor: '#F5F5F5',
     flex: 1,
   },
   wrongAnsModalBox: {
@@ -78,7 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     width: '85%',
-    height: 200,
+    height: '25%',
     borderRadius: 20,
   },
   PressedButtonBox: {
@@ -94,11 +116,19 @@ const styles = StyleSheet.create({
     color: THEME.lightBeige,
     fontSize: 35,
   },
+  titleText: {
+      fontFamily: THEME.titleFont,
+      color: THEME.textColor,
+      fontSize: 35,
+      textAlign:'center',
+      alignSelf:'center',
+      marginVertical:'3%',
+    },
   buttonText: {
     fontFamily: THEME.buttonFont,
     color: THEME.lightBeige,
     textAlign: 'center',
-    fontSize: 21,
+    fontSize: 19,
   },
   hintCountText: {
     fontFamily: THEME.titleFont,
@@ -110,7 +140,7 @@ const styles = StyleSheet.create({
     fontFamily: THEME.basicFont,
     color: THEME.textColor,
     textAlign: 'center',
-    fontSize: 19,
+    fontSize: 17,
   },
   noticeText: {
     fontFamily: THEME.basicFont,
@@ -126,7 +156,7 @@ const styles = StyleSheet.create({
   modalText: {
     fontFamily: THEME.basicFont,
     color: 'white',
-    fontSize: 20,
+    fontSize: 25,
     textAlign:'center',
   },
   hintText: {
@@ -135,10 +165,25 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign:'center',
   },
+  popText: {
+      fontFamily: THEME.basicFont,
+      color: THEME.textColor,
+      fontSize: 40,
+      textAlign:'center',
+    },
   timerText: {
     fontFamily: THEME.basicFont,
     color: THEME.textColor,
     fontSize: 20,
+  },
+  nickNameText:{
+      fontFamily: THEME.plainFont,
+      color: 'white',
+      fontSize: 18,
+      textAlign:'right',
+      borderBottomWidth:1,
+      width:'80%',
+      borderColor:'white',
   },
   bgImage:{
     width:'100%',
@@ -151,10 +196,29 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   questImage:{
-      width:'100%',
-      height:'100%',
+      marginVertical:'5%',
+      width:Dimensions.get("window").width*0.4,
+      height:Dimensions.get('window').height*0.1,
       borderRadius: 10,
-      resizeMode:'contain'
-    }
+      resizeMode:'contain',
+    },
+  questImage2:{
+          borderRadius: 10,
+          height:Dimensions.get('window').height*0.3,
+          resizeMode:'stretch',
+        },
+  hintImage:{
+      marginVertical:'10%',
+      height:Dimensions.get('window').height*0.3,
+      alignSelf:'center',
+      borderRadius: 10,
+      resizeMode:'contain',
+   },
+   iconImage:{
+        resizeMode:'contain',
+        alignSelf:'center',
+        height:'80%',
+        resizeMethod:'scale',
+   }
 })
 export default styles

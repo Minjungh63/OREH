@@ -1,6 +1,7 @@
 export const THEME = {
   basicFont: 'NanumMyeongjo',
   buttonFont: 'NanumMyeongjo',
+  plainFont: 'NanumSquareR',
   titleFont: 'Kim_Gu',
   backgroundColor: '#030A26',
   quest_backgroundColor: '#334D70',

@@ -9,6 +9,7 @@ export const Header = ({
   useHint,
   setUseHint,
   timerStart,
+  hintBtnHide,
 }) => {
   return (
     <View
@@ -22,12 +23,12 @@ export const Header = ({
     >
       <TimerMenu start={timerStart} />
       <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
-        <ShortHint
+        {hintBtnHide || <ShortHint
           setHintOpen={setHintOpen}
           setIsHintFin={setIsHintFin}
           useHint={useHint}
           setUseHint={setUseHint}
-        />
+        />}
         <HintButton />
       </View>
     </View>
