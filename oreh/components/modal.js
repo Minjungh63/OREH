@@ -1,13 +1,13 @@
 import Modal from 'react-native-simple-modal'
 import styles from '../pages/styles'
-import { Text, Pressable, Image } from 'react-native'
+import { Text, Pressable, Image, Dimensions } from 'react-native'
 import {THEME} from '../theme'
 import {Button} from './button'
 import { View } from 'react-native'
 import {useState} from 'react'
 import {STRING} from '../string'
 
-export const ModalWindow = ({ open, setOpen, text, text2,img, isHint,isPop }) => {
+export const ModalWindow = ({ open, setOpen, text, text2,img,img2, img3,img5,isHint,isPop }) => {
   const [pressed, setPressed] = useState(false)
   const [hintNum, setHintNum] = useState(1)
   return (
@@ -29,10 +29,27 @@ export const ModalWindow = ({ open, setOpen, text, text2,img, isHint,isPop }) =>
     <View style={isPop ? {flex:1,width:'100%',justifyContent:'center', marginVertical:30} :{flex:1,width:'100%',justifyContent:'space-between', marginVertical:30}}>
       {hintNum ==1 ?
         <>
-            <Text style={isHint && styles.hintText || isPop && styles.popText || styles.modalText}>{text}</Text>
-            {img && (<Image style={styles.hintImage} source={img}/>)}
+        {img5 ?
+        <View style={{flex:1,width:'100%',justifyContent:'flex-start'}}>
+        <Text style={isHint && styles.hintText || isPop && styles.popText || styles.modalText}>{"HINT1\n\n"}</Text>
+        <View style={{flexDirection:'row', alignItems:'center', alignSelf:'center'}}>
+            <Image style={[styles.hintImage,{width:50, height:50}]} source={img5}/>
+            {text && <Text style={isHint && styles.hintText || isPop && styles.popText || styles.modalText}>{text}</Text>}
+        </View>
+        </View>
+        :
+            <>
+            {text && <Text style={isHint && styles.hintText || isPop && styles.popText || styles.modalText}>{text}</Text>}
+            {img && <Image style={styles.hintImage} source={img}/>}
+            {img3 && <Image style={[styles.hintImage,{height:Dimensions.get('window').height*0.1}]} source={img3}/>}
+            </>
+         }
+         </>
+      : <>
+            {text2 && <Text style={isHint ? styles.hintText : styles.modalText}>{text2}</Text>}
+            {img2 && (<Image style={styles.hintImage} source={img2}/>)}
         </>
-      : <Text style={isHint ? styles.hintText : styles.modalText}>{text2}</Text>}
+      }
         {isHint&&<Pressable
             style={[
               pressed ? styles.PressedButtonBox : styles.buttonBox,

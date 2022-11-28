@@ -209,10 +209,11 @@ const styles = StyleSheet.create({
         },
   hintImage:{
       marginVertical:'10%',
+      width:Dimensions.get('window').width*0.5,
       height:Dimensions.get('window').height*0.3,
       alignSelf:'center',
       borderRadius: 10,
-      resizeMode:'contain',
+      resizeMode:'stretch',
    },
    iconImage:{
         resizeMode:'contain',

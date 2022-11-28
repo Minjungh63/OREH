@@ -10,6 +10,18 @@ import Quest4View from './pages/Quest4View'
 import Quest5View from './pages/Quest5View'
 import Quest6View from './pages/Quest6View'
 import Quest7View from './pages/Quest7View'
+import Quest8View from './pages/Quest8View'
+import Quest9View from './pages/Quest9View'
+import Quest10View from './pages/Quest10View'
+import Quest11View from './pages/Quest11View'
+import Quest12View from './pages/Quest12View'
+import Quest13View from './pages/Quest13View'
+import Quest14View from './pages/Quest14View'
+import Quest15View from './pages/Quest15View'
+import Quest16View from './pages/Quest16View'
+import Quest17View from './pages/Quest17View'
+import Quest18View from './pages/Quest18View'
+import Quest19View from './pages/Quest19View'
 import ResultView from './pages/ResultView'
 import * as Font from 'expo-font'
 import UserContext from './service/UserContext'
@@ -75,6 +87,18 @@ export default function App() {
           <Stack.Screen name="Quest5View" component={Quest5View} />
           <Stack.Screen name="Quest6View" component={Quest6View} />
           <Stack.Screen name="Quest7View" component={Quest7View} />
+          <Stack.Screen name="Quest8View" component={Quest8View} />
+          <Stack.Screen name="Quest9View" component={Quest9View} />
+          <Stack.Screen name="Quest10View" component={Quest10View} />
+          <Stack.Screen name="Quest11View" component={Quest11View} />
+          <Stack.Screen name="Quest12View" component={Quest12View} />
+          <Stack.Screen name="Quest13View" component={Quest13View} />
+          <Stack.Screen name="Quest14View" component={Quest14View} />
+          <Stack.Screen name="Quest15View" component={Quest15View} />
+          <Stack.Screen name="Quest16View" component={Quest16View} />
+          <Stack.Screen name="Quest17View" component={Quest17View} />
+          <Stack.Screen name="Quest18View" component={Quest18View} />
+          <Stack.Screen name="Quest19View" component={Quest19View} />
           <Stack.Screen name="ResultView" component={ResultView} />
         </Stack.Navigator>
       </NavigationContainer>

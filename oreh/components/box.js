@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { THEME } from '../theme'
 import { STRING } from '../string'
 
-export const Box = ({hintNum, text, text2,img, img2, img3, img4, option }) => {
+export const Box = ({hintNum, text, text2,img, img2, img3, img4, img5, option }) => {
   const [pressed, setPressed] = useState(1);
   return (
     <View style={option === 'quest' ? styles.questBox : styles.textBox}>
@@ -27,11 +27,15 @@ export const Box = ({hintNum, text, text2,img, img2, img3, img4, option }) => {
                 <Image style={img ? styles.questImage: styles.questImage2} source={img3}/>
             </ScrollView>) || img3 || img2 && (
                 <View style={img ? {flexDirection:'row', marginTop:"5%", height:Dimensions.get('window').height*0.15,alignContent:'center',alignItems:'center',justifyContent:'center'} : {flexDirection:'row',marginTop:"5%",height:Dimensions.get('window').height*0.3,resizeMode:'contain'}}>
-                    <Image style={img ? styles.questImage: styles.questImage2} source={img2}/>
+                    <Image style={img ? styles.questImage: [styles.questImage2,{width:Dimensions.get('window').width*0.7}]} source={img2}/>
                 </View>
             ) || img4 && (
                 <View style={{marginTop:"5%",height:Dimensions.get('window').height*0.3, alignItems:'center'}}>
                     <Image style={[styles.questImage2,{width:Dimensions.get('window').width*0.4}]} source={img4}/>
+                </View>
+            ) || img5 && (
+                <View style={{marginTop:"5%",height:Dimensions.get('window').height*0.3, alignItems:'center'}}>
+                    <Image style={[styles.questImage2,{height:Dimensions.get('window').height*0.1,width:Dimensions.get('window').width*0.7}]} source={img5}/>
                 </View>
             )}
         </View>
