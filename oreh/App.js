@@ -22,6 +22,7 @@ import Quest16View from './pages/Quest16View'
 import Quest17View from './pages/Quest17View'
 import Quest18View from './pages/Quest18View'
 import Quest19View from './pages/Quest19View'
+import Quest20View from './pages/Quest20View'
 import ResultView from './pages/ResultView'
 import * as Font from 'expo-font'
 import UserContext from './service/UserContext'
@@ -75,7 +76,7 @@ export default function App() {
     <UserContext.Provider value={valList}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="StartView"
+          initialRouteName="Quest20View"
           screenOptions={{ headerShown: false }}
         >
           <Stack.Screen name="StartView" component={StartView} />
@@ -99,6 +100,7 @@ export default function App() {
           <Stack.Screen name="Quest17View" component={Quest17View} />
           <Stack.Screen name="Quest18View" component={Quest18View} />
           <Stack.Screen name="Quest19View" component={Quest19View} />
+          <Stack.Screen name="Quest20View" component={Quest20View} />
           <Stack.Screen name="ResultView" component={ResultView} />
         </Stack.Navigator>
       </NavigationContainer>
