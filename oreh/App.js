@@ -76,7 +76,7 @@ export default function App() {
     <UserContext.Provider value={valList}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Quest20View"
+          initialRouteName="StartView"
           screenOptions={{ headerShown: false }}
         >
           <Stack.Screen name="StartView" component={StartView} />
