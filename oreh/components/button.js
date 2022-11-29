@@ -10,10 +10,14 @@ export const Button = ({
   inputAns,
   ans,
   setIsWrongAns,
+  tel,
 }) => {
   const userContext = useContext(UserContext)
   const [pressed, setPressed] = useState(false)
   const EnterAns = () => {
+    if(tel==true){
+        Linking.openURL(`tel:07045717849`)
+    }
     if (text === STRING.quest_buttonText) {
       if (ans === inputAns.trim()) {
         userContext.setRecordList([

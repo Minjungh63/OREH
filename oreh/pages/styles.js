@@ -1,4 +1,4 @@
-import { StyleSheet, Platform, Dimensions } from 'react-native'
+import { StyleSheet, Platform, Dimensions, StatusBar } from 'react-native'
 import { THEME } from '../theme'
 const styles = StyleSheet.create({
   container: {
@@ -41,6 +41,55 @@ const styles = StyleSheet.create({
               },
             }),
   },
+  smallQuestBox: {
+    flex:0.4,
+    paddingLeft: 2,
+    paddingTop: 2,
+    paddingRight:6,
+    paddingBottom:6,
+    borderRadius: 30,
+    backgroundColor:'rgba(0, 0, 0, 0.0000001)',
+    justifyContent: 'center',
+         ...Platform.select({
+              ios: {
+                shadowColor: "#000",
+                shadowOffset: {
+                	width: 0,
+                	height: 1,
+                },
+                shadowOpacity: 0.22,
+                shadowRadius: 2.22,
+              },
+              android: {
+                elevation:3
+              },
+            }),
+  },
+  webtoonBox: {
+    flex:1,
+    paddingLeft: 2,
+    paddingTop: 2,
+    paddingRight:6,
+    paddingBottom:6,
+    borderRadius: 30,
+    marginBottom:'8%',
+    backgroundColor:'rgba(0, 0, 0, 0.0000001)',
+    justifyContent: 'center',
+         ...Platform.select({
+              ios: {
+                shadowColor: "#000",
+                shadowOffset: {
+                	width: 0,
+                	height: 1,
+                },
+                shadowOpacity: 0.22,
+                shadowRadius: 2.22,
+              },
+              android: {
+                elevation:3
+              },
+            }),
+  },
   inputBox: {
     backgroundColor: 'white',
     color:THEME.buttonColor,
@@ -56,6 +105,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     width: '85%',
+    height: 40,
+    borderRadius: 10,
+  },
+  smallButtonBox: {
+    backgroundColor: THEME.buttonColor,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    width: '25%',
     height: 40,
     borderRadius: 10,
   },
@@ -76,10 +133,11 @@ const styles = StyleSheet.create({
     width: '85%',
     height: '70%',
     borderRadius: 20,
+
   },
   hintModalBackground: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0)',
+    flex:1,
   },
  popModalBox: {
     backgroundColor: '#F5F5F5',
@@ -89,10 +147,11 @@ const styles = StyleSheet.create({
     width: '85%',
     height: '25%',
     borderRadius: 20,
+    marginBottom:300,
   },
   popModalBackground: {
     backgroundColor: '#F5F5F5',
-    flex: 1,
+    height:Dimensions.get('window').height+StatusBar.currentHeight,
   },
   wrongAnsModalBox: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
@@ -129,6 +188,12 @@ const styles = StyleSheet.create({
     color: THEME.lightBeige,
     textAlign: 'center',
     fontSize: 19,
+  },
+  smallButtonText: {
+    fontFamily: THEME.buttonFont,
+    color: THEME.lightBeige,
+    textAlign: 'center',
+    fontSize: 13,
   },
   hintCountText: {
     fontFamily: THEME.titleFont,
@@ -206,6 +271,13 @@ const styles = StyleSheet.create({
           borderRadius: 10,
           height:Dimensions.get('window').height*0.3,
           resizeMode:'stretch',
+        },
+        webtoonImage:{
+          width:'100%',
+          resizeMethod:'resize',
+          alignSelf:'center',
+          margin:0,
+          overflow: 'hidden',
         },
   hintImage:{
       marginVertical:'10%',

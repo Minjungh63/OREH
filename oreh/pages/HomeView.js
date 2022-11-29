@@ -1,7 +1,7 @@
 LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
 LogBox.ignoreAllLogs() //Ignore all log notifications
 import React from 'react'
-import { View, Text, LogBox, SafeAreaView, ImageBackground,Dimensions,StatusBar  } from 'react-native'
+import { View, Text, LogBox, ImageBackground,Dimensions,StatusBar  } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
 import { Box } from '../components/box'
@@ -10,7 +10,7 @@ import {THEME} from '../theme';
 
 const HomeView = ({ navigation }) => {
   return (
-    <SafeAreaView style={{flex:1}}>
+    <View style={{flex:1}}>
       <ImageBackground source={require("../assets/background.jpg")} style={[styles.bgImage,{height:Dimensions.get('window').height+StatusBar.currentHeight}]} >
       <View style={{flex: 1, backgroundColor: 'rgba(11, 2, 2, 0.7)',}}>
       <View style={styles.container}>
@@ -26,7 +26,7 @@ const HomeView = ({ navigation }) => {
       </View>
       </View>
       </ImageBackground>
-    </SafeAreaView>
+    </View>
   )
 }
 

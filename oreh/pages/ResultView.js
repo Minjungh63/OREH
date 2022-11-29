@@ -1,17 +1,18 @@
 LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
 LogBox.ignoreAllLogs() //Ignore all log notifications
-import React, { useContext, useEffect, useState } from 'react'
-import { View, Text, LogBox, SafeAreaView } from 'react-native'
+import React, { useState, useContext, useEffect } from 'react'
+import { View, Text, LogBox, SafeAreaView, ImageBackground, Dimensions, Image,StatusBar  } from 'react-native'
 import styles from './styles'
 import { Button } from '../components/button'
 import { Box } from '../components/box'
 import { Input } from '../components/Input'
 import { ModalWindow } from '../components/modal'
 import { Header } from '../components/head'
-import UserContext from '../service/UserContext'
 import { STRING } from '../string'
-import { axios_post } from '../service/api'
-import timeFormat from '../service/timeFormat'
+import {THEME} from '../theme'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import UserContext from '../service/UserContext';
+import timeFormat from '../service/timeFormat.js'
 
 const ResultView = ({ navigation }) => {
   const [inputAns, setInputAns] = useState('')
@@ -20,79 +21,36 @@ const ResultView = ({ navigation }) => {
   const [isHintFin, setIsHintFin] = useState(false)
   const [useHint, setUseHint] = useState(false)
   const userContext = useContext(UserContext)
-  const sendRecord = async () => {
-    try {
-      await axios_post('record', {
-        userId: userContext.userId,
-        q1: timeFormat(userContext.recordList[0]),
-        q2: timeFormat(userContext.recordList[1] - userContext.recordList[0]),
-        q3: timeFormat(userContext.recordList[2] - userContext.recordList[1]),
-        q4: timeFormat(userContext.recordList[3] - userContext.recordList[2]),
-      })
-    } catch (e) {
-      console.log('기록 전송 에러: ' + e)
-    }
-  }
-  useEffect(() => {
+  useEffect(()=>{
     userContext.setIsEnd(true)
-    sendRecord()
-  }, [])
+  },[])
   return (
-    <SafeAreaView style={styles.questContainer}>
-      <Header
-        setHintOpen={setHintOpen}
-        setIsHintFin={setIsHintFin}
-        useHint={useHint}
-        setUseHint={setUseHint}
-      />
-      <View
-        style={{
-          flex: 0.05,
-          justifyContent: 'flex-end',
-          paddingBottom: 10,
-          paddingLeft: 10,
-        }}
-      >
-        <Text style={styles.basicText}>1918년 10월 1일</Text>
-      </View>
-      <Box option={'quest'} text={STRING.quest4} />
+  <KeyboardAwareScrollView contentContainerStyle={{height:Dimensions.get('window').height+StatusBar.currentHeight, width:Dimensions.get("window").width}} resetScrollToCoords={{ x: 0, y: 0 }} scrollEnabled={false}>
+    <ImageBackground source={require("../assets/background.jpg")} style={[styles.bgImage,{height:Dimensions.get('screen').height}]} >
+    <View style={styles.container}>
+      <View style={{ alignItems: 'flex-start',justifyContent:'flex-start',height:Dimensions.get('screen').height*0.05}}>
+                <Text style={{fontFamily:THEME.titleFont, color: THEME.buttonColor, fontSize: 20}}>경성일기 : 1919</Text>
+              </View>
       <View
         style={{
           flex: 0.1,
-          justifyContent: 'space-around',
-          flexDirection: 'row',
-          alignItems: 'center',
+          alignItems:'flex-end',
+          justifyContent: 'flex-end',
+          marginTop: 15,
+          paddingLeft: 10,
         }}
       >
-        <Input setInputAns={setInputAns} />
-        <Button
-          navigation={navigation}
-          text={STRING.quest_buttonText}
-          viewName={'HomeView'}
-          inputAns={inputAns}
-          ans={STRING.ans4}
-          setIsWrongAns={setIsWrongAns}
-        />
+        <Text style={[styles.titleText,{fontSize:25,marginBottom:-7,height:80}]}>{STRING.title24}</Text>
       </View>
-      <ModalWindow
-        open={hintOpen}
-        setOpen={setHintOpen}
-        text={STRING.hint4}
-        isHint={true}
-      />
-      <ModalWindow
-        open={isHintFin}
-        setOpen={setIsHintFin}
-        text={STRING.hintEndModalText}
-        isHint={false}
-      />
-      <ModalWindow
-        open={isWrongAns}
-        setOpen={setIsWrongAns}
-        text={STRING.wrongAnsModalText}
-        isHint={false}
-      />
-    </SafeAreaView>
+      <Box option={'quest'} text={userContext.nickname+STRING.quest24+timeFormat(userContext.timer)+STRING.quest24_2}/>
+      <Button
+            navigation={navigation}
+            text={'NEXT'}
+                  viewName={'LastView'}
+                />
+      </View>
+      </ImageBackground>
+    </KeyboardAwareScrollView>
   )
 }
 

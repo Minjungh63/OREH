@@ -13,16 +13,16 @@ import { ModalWindow } from '../components/modal'
 
 const StartView = ({ navigation }) => {
   const userContext = useContext(UserContext)
-  const [nickname, setNickname] = useState("")
+  const [name, setName] = useState("")
   const [isEnter, setIsEnter] = useState(false)
   const EnterBtn = () => {
-      if (nickname.trim() === ""){
+      if (name.trim() === ""){
         setIsEnter(true)
       }
       else{
+        userContext.setNickname(name)
         navigation.navigate("HomeView")
-        userContext.setNickname(nickname)
-        console.log(userContext.nickname)
+
       }
     }
   return (
@@ -33,7 +33,7 @@ const StartView = ({ navigation }) => {
         <View style={{ alignItems: 'flex-start',justifyContent:'flex-start',height:Dimensions.get('screen').height*0.2, paddingTop:'17%' }}>
           <Text style={{fontFamily:THEME.titleFont, color: THEME.lightBeige, fontSize: 22}}>경성일기 : 1919</Text>
         </View>
-        <View style={{height:Dimensions.get('screen').height*0.5, justifyContent:'center'}}>
+        <View style={{height:Dimensions.get('screen').height*0.35, justifyContent:'center'}}>
             <Image
                 style={styles.iconImage}
                 source={require("../assets/icon.png")}/>
@@ -41,8 +41,8 @@ const StartView = ({ navigation }) => {
         <View style={{height:Dimensions.get('screen').height*0.3, justifyContent:'space-evenly', width:'100%', marginRight:'5%'}}>
             <View style={{alignItems:'flex-end'}}><TextInput
                 style={styles.nickNameText}
-                onChangeText =  {setNickname}
-                value = {nickname}
+                onChangeText =  {(e)=>setName(e)}
+                value = {name}
                 placeholder="닉네임을 입력하시오."
                 placeholderTextColor={'#C2BEBE'}
               /></View>
@@ -57,7 +57,7 @@ const StartView = ({ navigation }) => {
         <ModalWindow
            open={isEnter}
            setOpen={setIsEnter}
-           text={"닉네임을 입력해주세요."}
+           text={"\n닉네임을 입력해주세요."}
            isHint={false}
         />
         </View>
