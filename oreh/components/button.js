@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { Text, Pressable } from 'react-native'
+import { Text, Pressable, Linking } from 'react-native'
 import styles from '../pages/styles.js'
 import UserContext from '../service/UserContext.js'
 import { STRING } from '../string'
@@ -15,7 +15,7 @@ export const Button = ({
   const userContext = useContext(UserContext)
   const [pressed, setPressed] = useState(false)
   const EnterAns = () => {
-    if(tel==true){
+    if(tel){
         Linking.openURL(`tel:07045717849`)
     }
     if (text === STRING.quest_buttonText) {

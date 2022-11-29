@@ -4,11 +4,13 @@
     "slug": "OREH",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": {
+      "image":"./assets/icon.png",
+      "resizeMode": "contain",
+    },
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "stretch"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,7 +25,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#6D4F3E"
       },
       "package": "com.OREH.OREH",
@@ -33,6 +35,7 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
+
       "eas": {
         "projectId": "2d6cce5f-abd6-447b-ab2d-f789b7c2881d"
       }

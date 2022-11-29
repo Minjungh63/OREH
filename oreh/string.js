@@ -92,7 +92,7 @@ export const STRING = {
   quest17:"격벽장으로 이동하시오.",
   pop17:"오",
   quest18:"격벽장은 옥수들이 햇빛을 쐬는 동안\n서로 대화할 수 없도록\n벽으로 막아놓은 장소로,\n0줄로 이루어져있다. \n\n\n격벽장의 줄 수를 참고하여\n아래 암호를 푸시오.",
-  ans18:"go to women’s prison 5",
+  ans18:"go to women's prison 5",
   hint18_1:"HINT1\n\n\n\n\n격벽장 줄 수만큼\n알파벳 배열을 바꿔보세요.\n(시저 암호)",
   hint18_2:"HINT2\n\n\n\n\n알파벳을 10자리 미루세요.\n\n(ex. Q → G, Y → O)",
   date18:"1919년 6월 21일",
