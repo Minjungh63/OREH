@@ -28,8 +28,9 @@ const ResultView = ({ navigation }) => {
   <KeyboardAwareScrollView contentContainerStyle={{height:Dimensions.get('window').height+StatusBar.currentHeight, width:Dimensions.get("window").width}} resetScrollToCoords={{ x: 0, y: 0 }} scrollEnabled={false}>
     <ImageBackground source={require("../assets/background.jpg")} style={[styles.bgImage,{height:Dimensions.get('screen').height}]} >
     <View style={styles.container}>
-      <View style={{ alignItems: 'flex-start',justifyContent:'flex-start',height:Dimensions.get('screen').height*0.05}}>
+      <View style={{ flexDirection:'row',alignItems: 'center',justifyContent:'space-between',height:Dimensions.get('screen').height*0.05}}>
                 <Text style={{fontFamily:THEME.titleFont, color: THEME.buttonColor, fontSize: 20}}>경성일기 : 1919</Text>
+                <Image style={{width:35,height:35,resizeMode:'cover'}} source={require('../assets/dark_icon.png')}/>
               </View>
       <View
         style={{
@@ -42,7 +43,7 @@ const ResultView = ({ navigation }) => {
       >
         <Text style={[styles.titleText,{fontSize:25,marginBottom:-7,height:80}]}>{STRING.title24}</Text>
       </View>
-      <Box option={'quest'} text={userContext.nickname+STRING.quest24+timeFormat(userContext.timer)+STRING.quest24_2}/>
+      <Box option={'quest'} name={userContext.nickname+'님의'} text={STRING.quest24+timeFormat(userContext.timer)+STRING.quest24_2}/>
       <Button
             navigation={navigation}
             text={'NEXT'}

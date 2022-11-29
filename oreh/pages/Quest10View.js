@@ -40,7 +40,7 @@ const Quest10View = ({ navigation }) => {
       >
         <Text style={styles.basicText}>{STRING.date10}</Text>
       </View>
-      <Box option={'quest'} img2={require("../assets/quest_img/questImg10_1.jpg")} hintNum={'Mission 10.\n\n'} text={STRING.quest10}/>
+      <Box option={'quest'} img2={require("../assets/quest_img/questImg10_1.jpg")} hintNum={'Mission 10.\n'} text={STRING.quest10}/>
       <View
         style={{
           flex: 0.05,

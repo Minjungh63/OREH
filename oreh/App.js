@@ -31,7 +31,9 @@ import * as Font from 'expo-font'
 import UserContext from './service/UserContext'
 import { Asset } from 'expo';
 import Icon from 'react-native-vector-icons/Ionicons';
+import SystemNavigationBar from 'react-native-system-navigation-bar';
 
+SystemNavigationBar.stickyImmersive();
 export default function App() {
   const [userId, setUserId] = useState(1)
   const [appIsReady, setAppIsReady] = useState(false)
@@ -59,6 +61,7 @@ export default function App() {
     HBIOS_SYS: require('./assets/fonts/HBIOS-SYS.ttf'),
     Kim_Gu: require('./assets/fonts/Kim-Gu.ttf'),
     NanumMyeongjo: require('./assets/fonts/NanumMyeongjoBold.ttf'),
+    NanumMyeongjoBold: require('./assets/fonts/NanumMyeongjoExtraBold.ttf'),
   }
   useEffect(() => {
     async function prepare() {
@@ -122,6 +125,7 @@ export default function App() {
         require('./assets/quest_img/questImg16.png'),
         require('./assets/quest_img/questImg18.png'),
         require('./assets/icon.png'),
+        require('./assets/dark_icon.png'),
         require('./assets/adaptive-icon.png'),
         require('./assets/background.jpg'),
     ]

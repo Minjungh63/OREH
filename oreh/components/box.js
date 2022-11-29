@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { THEME } from '../theme'
 import { STRING } from '../string'
 
-export const Box = ({hintNum, text, text2,img, img2, img3, img4, img5, option, slider,webtoon }) => {
+export const Box = ({hintNum, text, text2,img, img2, img3, img4, img5, option, slider,webtoon, name }) => {
   const [pressed, setPressed] = useState(1);
 
   return (
@@ -14,21 +14,22 @@ export const Box = ({hintNum, text, text2,img, img2, img3, img4, img5, option, s
     <View style={webtoon ? {flex:1, justifyContent:'center'} : styles.questContainer}>
       {option === 'quest' ? (
         <View style={{justifyContent:'flex-start', height:"90%"}}>
-            {hintNum && <Text style={[styles.questText,{marginTop:'8%'}]}>{hintNum}</Text>}
+            {hintNum && <Text style={[styles.questText,{marginTop:'8%',fontFamily:'NanumMyeongjoBold', fontSize:22}]}>{hintNum}</Text>}
             {img && (
             <>
             <Text style={{textAlign:'center',marginTop:'2%',fontSize:25, color:'rgba(0, 0, 0, 0.6)', fontWeight:'700'}}>ex</Text>
-            <View style={{backgroundColor:'rgba(0, 0, 0, 0.6)',borderRadius:0,height:Dimensions.get('window').height*0.15, marginBottom:"8%", alignContent:'center', alignItems:'center'}}>
-                <Image style={[styles.questImage,{height:Dimensions.get('window').height*0.1}]} source={img}/>
+            <View style={{backgroundColor:'rgba(0, 0, 0, 0.6)',borderRadius:0,height:Dimensions.get('window').height*0.15, marginBottom:"8%", alignContent:'center', alignItems:'center', justifyContent:'center'}}>
+                <Image style={[styles.questImage,{height:Dimensions.get('window').height*0.15}]} source={img}/>
             </View>
             </>)}
+            {name && <Text style={[styles.questText,{fontSize:24, fontFamily:'NanumMyeongjoBold',marginBottom:7}]}>{name}</Text>}
             {text && <Text style={styles.questText}>{text}</Text>}
             {img3 && (<ScrollView horizontal={true} showsHorizontalScrollIndicator={true} style={{flexDirection:'row',marginTop:"5%", height:Dimensions.get('window').height*0.3, resizeMode:'contain'}}>
                 <Image style={img ? styles.questImage: styles.questImage2} source={img2}/>
                 <Image style={img ? styles.questImage: styles.questImage2} source={img3}/>
             </ScrollView>) || img3 || img2 && (
-                <View style={img ? {flexDirection:'row', marginTop:"5%", height:Dimensions.get('window').height*0.15,alignContent:'center',alignItems:'center',justifyContent:'center'} : {flexDirection:'row',marginTop:"5%",height:Dimensions.get('window').height*0.3,resizeMode:'contain'}}>
-                    <Image style={img ? styles.questImage: [styles.questImage2,{width:Dimensions.get('window').width*0.7}]} source={img2}/>
+                <View style={img ? {height:Dimensions.get('window').height*0.15,alignContent:'center',alignItems:'center',justifyContent:'flex-start'} : {flexDirection:'row',marginTop:"5%",height:Dimensions.get('window').height*0.3,resizeMode:'contain'}}>
+                    <Image style={img ? [styles.questImage,{width:Dimensions.get('window').width*0.6,resizeMode:'cover'}]: [styles.questImage2,{width:Dimensions.get('window').width*0.7}]} source={img2}/>
                 </View>
             ) || img4 && (
                 <View style={{marginTop:"5%",height:Dimensions.get('window').height*0.3, alignItems:'center'}}>

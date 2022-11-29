@@ -4,10 +4,7 @@
     "slug": "OREH",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": {
-      "image":"./assets/icon.png",
-      "resizeMode": "contain",
-    },
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -25,7 +22,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png",
+        "foregroundImage": "./assets/app-icon.png",
         "backgroundColor": "#6D4F3E"
       },
       "package": "com.OREH.OREH",

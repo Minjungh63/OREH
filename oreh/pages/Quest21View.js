@@ -18,8 +18,8 @@ const Quest21View = ({ navigation }) => {
   const [isWrongAns, setIsWrongAns] = useState(false)
   const [isHintFin, setIsHintFin] = useState(false)
   const [useHint, setUseHint] = useState(false)
-  const [slider1, setSlider1] = useState(0);
-  const [slider2, setSlider2] = useState(0);
+  const [slider1, setSlider1] = useState(50);
+  const [slider2, setSlider2] = useState(50);
 
   return (
   <KeyboardAwareScrollView contentContainerStyle={{height:Dimensions.get('window').height+StatusBar.currentHeight, width:Dimensions.get("window").width}} resetScrollToCoords={{ x: 0, y: 0 }} scrollEnabled={false}>
@@ -50,7 +50,7 @@ const Quest21View = ({ navigation }) => {
                   <Slider
                           	value={slider1}
                               onValueChange={(e) => setSlider1(e)}
-                   	  		minimumValue={0}
+                   	  		minimumValue={50}
                   	  		maximumValue={100}
                   	  		thumbTintColor="#6D4F3E"
                     	  		minimumTrackTintColor="#6D4F3E"
@@ -61,7 +61,7 @@ const Quest21View = ({ navigation }) => {
                   <Slider
                                       	value={slider2}
                                           onValueChange={(e) => setSlider2(e)}
-                               	  		minimumValue={0}
+                               	  		minimumValue={50}
                               	  		maximumValue={100}
                               	  		thumbTintColor="#6D4F3E"
                                 	  		minimumTrackTintColor="#6D4F3E"

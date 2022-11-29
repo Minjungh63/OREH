@@ -5452,6 +5452,11 @@ react-native-simple-modal@^9.0.1:
   resolved "https://registry.npmjs.org/react-native-simple-modal/-/react-native-simple-modal-9.0.1.tgz"
   integrity sha512-tAqIWFD2K1qZ71oQDEeyxC+3nwVEqwt/wnho7cbGzz1GB0HpxzC5qHbO5x39PUNgm3iX1DitUUQFhKYnxT3pTg==
 
+react-native-system-navigation-bar@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-system-navigation-bar/-/react-native-system-navigation-bar-2.0.1.tgz#517d30bea9081434175b5cb2a7d77c81beee71c3"
+  integrity sha512-7BgWfLDakLd9euasQsACCjp0+t1y2FiTaoiE+bA5YrPktCsIGCMlvGxO3u688YZR5MHJmob73GtqNNOyzWMjww==
+
 react-native@0.70.5:
   version "0.70.5"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.70.5.tgz"
