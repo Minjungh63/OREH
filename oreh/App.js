@@ -32,7 +32,7 @@ import UserContext from './service/UserContext'
 import { Asset } from 'expo'
 import SystemNavigationBar from 'react-native-system-navigation-bar'
 
-SystemNavigationBar.stickyImmersive()
+SystemNavigationBar.lowProfile()
 export default function App() {
   const [userId, setUserId] = useState(1)
   const [appIsReady, setAppIsReady] = useState(false)
