@@ -97,7 +97,7 @@ const StartView = ({ navigation }) => {
                   style={styles.nickNameText}
                   onChangeText={(e) => setName(e)}
                   value={name}
-                  placeholder="\n닉네임을 입력하시오."
+                  placeholder="닉네임을 입력하시오."
                   placeholderTextColor={'#C2BEBE'}
                 />
               </View>
@@ -109,7 +109,7 @@ const StartView = ({ navigation }) => {
           <ModalWindow
             open={isEnter}
             setOpen={setIsEnter}
-            text={'\n닉네임을 입력해주세요.'}
+            text={'\n\n닉네임을 입력해주세요.'}
             isHint={false}
           />
         </View>
