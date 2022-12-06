@@ -15,9 +15,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+
     "ios": {
+      "icon": "./assets/app-icon.png",
       "supportsTablet": true,
-      "bundleIdentifier": "com.OREH.OREH",
+      "bundleIdentifier": "com.oreh.oreh",
       "buildNumber": "1.0.0"
     },
     "android": {
@@ -25,11 +27,11 @@
         "foregroundImage": "./assets/app-icon.png",
         "backgroundColor": "#6D4F3E"
       },
-      "package": "com.OREH.OREH",
+      "package": "com.oreh.oreh",
       "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/app-icon.png"
     },
     "extra": {
 

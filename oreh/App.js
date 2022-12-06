@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import HomeView from './pages/HomeView'
 import StartView from './pages/StartView'
 import Quest1View from './pages/Quest1View'
@@ -29,11 +29,10 @@ import ResultView from './pages/ResultView'
 import LastView from './pages/LastView'
 import * as Font from 'expo-font'
 import UserContext from './service/UserContext'
-import { Asset } from 'expo';
-import Icon from 'react-native-vector-icons/Ionicons';
-import SystemNavigationBar from 'react-native-system-navigation-bar';
+import { Asset } from 'expo'
+import SystemNavigationBar from 'react-native-system-navigation-bar'
 
-SystemNavigationBar.stickyImmersive();
+SystemNavigationBar.stickyImmersive()
 export default function App() {
   const [userId, setUserId] = useState(1)
   const [appIsReady, setAppIsReady] = useState(false)
@@ -41,7 +40,7 @@ export default function App() {
   const [timer, setTimer] = useState(0)
   const [isEnd, setIsEnd] = useState(false)
   const [recordList, setRecordList] = useState([])
-  const [nickname, setNickname] = useState("")
+  const [nickname, setNickname] = useState('')
   const valList = {
     userId,
     setUserId,
@@ -58,7 +57,6 @@ export default function App() {
   }
   let FontList = {
     NanumSquareR: require('./assets/fonts/NanumSquareR.ttf'),
-    HBIOS_SYS: require('./assets/fonts/HBIOS-SYS.ttf'),
     Kim_Gu: require('./assets/fonts/Kim-Gu.ttf'),
     NanumMyeongjo: require('./assets/fonts/NanumMyeongjoBold.ttf'),
     NanumMyeongjoBold: require('./assets/fonts/NanumMyeongjoExtraBold.ttf'),
@@ -77,60 +75,60 @@ export default function App() {
     }
     prepare()
   }, [])
-    async function cacheResourcesAsync(){
-    const images=[
-        require('./assets/webtoon_img/5_2.png'),
-        require('./assets/webtoon_img/5_2_0.png'),
-        require('./assets/webtoon_img/5_2_1.png'),
-        require('./assets/webtoon_img/5_2_2.png'),
-        require('./assets/webtoon_img/5_2_2_1.png'),
-        require('./assets/webtoon_img/5_2_3.png'),
-        require('./assets/webtoon_img/5_2_3_0.png'),
-        require('./assets/webtoon_img/5_3.png'),
-        require('./assets/webtoon_img/5_3_1.png'),
-        require('./assets/webtoon_img/5_3_1_0.png'),
-        require('./assets/webtoon_img/5_3_2.png'),
-        require('./assets/webtoon_img/5_3_3.png'),
-        require('./assets/webtoon_img/6_1.png'),
-        require('./assets/webtoon_img/6_1_1.png'),
-        require('./assets/webtoon_img/6_1_2.png'),
-        require('./assets/webtoon_img/6_1_3.png'),
-        require('./assets/webtoon_img/6_1_4.png'),
-        require('./assets/webtoon_img/6_2.png'),
-        require('./assets/webtoon_img/6_2_1.png'),
-        require('./assets/webtoon_img/6_2_2.png'),
-        require('./assets/webtoon_img/6_2_3.png'),
-        require('./assets/webtoon_img/6_2_4.png'),
-        require('./assets/webtoon_img/6_3.png'),
-        require('./assets/webtoon_img/6_3_1.png'),
-        require('./assets/webtoon_img/6_3_2.png'),
-        require('./assets/webtoon_img/6_3_3.png'),
-        require('./assets/webtoon_img/6_4.png'),
-        require('./assets/webtoon_img/6_4_1.png'),
-        require('./assets/webtoon_img/7_1.png'),
-        require('./assets/quest_img/questImg1_1.png'),
-        require('./assets/quest_img/questImg1_2.png'),
-        require('./assets/quest_img/questImg2_1.jpg'),
-        require('./assets/quest_img/questImg2_2.jpg'),
-        require('./assets/quest_img/questImg2_3.jpg'),
-        require('./assets/quest_img/questImg4.png'),
-        require('./assets/quest_img/questImg10_1.jpg'),
-        require('./assets/quest_img/questImg10_2.jpg'),
-        require('./assets/quest_img/questImg10_3.jpg'),
-        require('./assets/quest_img/questImg12_1.png'),
-        require('./assets/quest_img/questImg12_2.png'),
-        require('./assets/quest_img/questImg12_3.png'),
-        require('./assets/quest_img/questImg14_1.png'),
-        require('./assets/quest_img/questImg14_2.png'),
-        require('./assets/quest_img/questImg16.png'),
-        require('./assets/quest_img/questImg18.png'),
-        require('./assets/icon.png'),
-        require('./assets/dark_icon.png'),
-        require('./assets/adaptive-icon.png'),
-        require('./assets/background.jpg'),
+  async function cacheResourcesAsync() {
+    const images = [
+      require('./assets/webtoon_img/5_2.jpg'),
+      require('./assets/webtoon_img/5_2_0.jpg'),
+      require('./assets/webtoon_img/5_2_1.jpg'),
+      require('./assets/webtoon_img/5_2_2.jpg'),
+      require('./assets/webtoon_img/5_2_2_1.jpg'),
+      require('./assets/webtoon_img/5_2_3.jpg'),
+      require('./assets/webtoon_img/5_2_3_0.jpg'),
+      require('./assets/webtoon_img/5_3.jpg'),
+      require('./assets/webtoon_img/5_3_1.jpg'),
+      require('./assets/webtoon_img/5_3_1_0.jpg'),
+      require('./assets/webtoon_img/5_3_2.jpg'),
+      require('./assets/webtoon_img/5_3_3.jpg'),
+      require('./assets/webtoon_img/6_1.jpg'),
+      require('./assets/webtoon_img/6_1_1.jpg'),
+      require('./assets/webtoon_img/6_1_2.jpg'),
+      require('./assets/webtoon_img/6_1_3.jpg'),
+      require('./assets/webtoon_img/6_1_4.jpg'),
+      require('./assets/webtoon_img/6_2.jpg'),
+      require('./assets/webtoon_img/6_2_1.jpg'),
+      require('./assets/webtoon_img/6_2_2.jpg'),
+      require('./assets/webtoon_img/6_2_3.jpg'),
+      require('./assets/webtoon_img/6_2_4.jpg'),
+      require('./assets/webtoon_img/6_3.jpg'),
+      require('./assets/webtoon_img/6_3_1.jpg'),
+      require('./assets/webtoon_img/6_3_2.jpg'),
+      require('./assets/webtoon_img/6_3_3.jpg'),
+      require('./assets/webtoon_img/6_4.jpg'),
+      require('./assets/webtoon_img/6_4_1.jpg'),
+      require('./assets/webtoon_img/7_1.jpg'),
+      require('./assets/quest_img/questImg1_1.png'),
+      require('./assets/quest_img/questImg1_2.png'),
+      require('./assets/quest_img/questImg2_1.jpg'),
+      require('./assets/quest_img/questImg2_2.jpg'),
+      require('./assets/quest_img/questImg2_3.jpg'),
+      require('./assets/quest_img/questImg4.png'),
+      require('./assets/quest_img/questImg10_1.jpg'),
+      require('./assets/quest_img/questImg10_2.jpg'),
+      require('./assets/quest_img/questImg10_3.jpg'),
+      require('./assets/quest_img/questImg12_1.png'),
+      require('./assets/quest_img/questImg12_2.png'),
+      require('./assets/quest_img/questImg12_3.png'),
+      require('./assets/quest_img/questImg14_1.png'),
+      require('./assets/quest_img/questImg14_2.png'),
+      require('./assets/quest_img/questImg16.png'),
+      require('./assets/quest_img/questImg18.png'),
+      require('./assets/icon.png'),
+      require('./assets/dark_icon.png'),
+      require('./assets/adaptive-icon.png'),
+      require('./assets/background.jpg'),
     ]
-    const cacheImages = images.map((image)=>{
-        return Asset.fromModule(image).downloadAsync();
+    const cacheImages = images.map((image) => {
+      return Asset.fromModule(image).downloadAsync()
     })
     return Promise.all(cacheImages)
   }
