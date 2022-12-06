@@ -2,97 +2,97 @@ import { StyleSheet, Platform, Dimensions, StatusBar } from 'react-native'
 import { THEME } from '../theme'
 const styles = StyleSheet.create({
   container: {
-    height:Dimensions.get('window').height,
+    height: Dimensions.get('window').height,
     width: Dimensions.get('window').width,
     padding: '6%',
     justifyContent: 'space-evenly',
   },
   questContainer: {
-    height:Dimensions.get('window').height*0.6,
+    height: Dimensions.get('window').height * 0.6,
     paddingHorizontal: '8%',
     justifyContent: 'space-evenly',
   },
   textBox: {
-    flex:0.8,
+    flex: 0.8,
     paddingHorizontal: 10,
     paddingVertical: 10,
   },
   questBox: {
-    flex:0.65,
+    flex: 0.65,
     paddingLeft: 2,
     paddingTop: 2,
-    paddingRight:6,
-    paddingBottom:6,
+    paddingRight: 6,
+    paddingBottom: 6,
     borderRadius: 30,
-    backgroundColor:'rgba(0, 0, 0, 0.0000001)',
+    backgroundColor: 'rgba(0, 0, 0, 0.0000001)',
     justifyContent: 'center',
-         ...Platform.select({
-              ios: {
-                shadowColor: "#000",
-                shadowOffset: {
-                	width: 0,
-                	height: 1,
-                },
-                shadowOpacity: 0.22,
-                shadowRadius: 2.22,
-              },
-              android: {
-                elevation:3
-              },
-            }),
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+      },
+      android: {
+        elevation: 3,
+      },
+    }),
   },
   smallQuestBox: {
-    flex:0.4,
+    flex: 0.4,
     paddingLeft: 2,
     paddingTop: 2,
-    paddingRight:6,
-    paddingBottom:6,
+    paddingRight: 6,
+    paddingBottom: 6,
     borderRadius: 30,
-    backgroundColor:'rgba(0, 0, 0, 0.0000001)',
+    backgroundColor: 'rgba(0, 0, 0, 0.0000001)',
     justifyContent: 'center',
-         ...Platform.select({
-              ios: {
-                shadowColor: "#000",
-                shadowOffset: {
-                	width: 0,
-                	height: 1,
-                },
-                shadowOpacity: 0.22,
-                shadowRadius: 2.22,
-              },
-              android: {
-                elevation:3
-              },
-            }),
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+      },
+      android: {
+        elevation: 3,
+      },
+    }),
   },
   webtoonBox: {
-    flex:1,
+    flex: 1,
     paddingLeft: 2,
     paddingTop: 2,
-    paddingRight:6,
-    paddingBottom:6,
+    paddingRight: 6,
+    paddingBottom: 6,
     borderRadius: 30,
-    marginBottom:'8%',
-    backgroundColor:'rgba(0, 0, 0, 0.0000001)',
+    marginBottom: '8%',
+    backgroundColor: 'rgba(0, 0, 0, 0.0000001)',
     justifyContent: 'center',
-         ...Platform.select({
-              ios: {
-                shadowColor: "#000",
-                shadowOffset: {
-                	width: 0,
-                	height: 1,
-                },
-                shadowOpacity: 0.22,
-                shadowRadius: 2.22,
-              },
-              android: {
-                elevation:3
-              },
-            }),
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+      },
+      android: {
+        elevation: 3,
+      },
+    }),
   },
   inputBox: {
     backgroundColor: 'white',
-    color:THEME.buttonColor,
+    color: THEME.buttonColor,
     fontSize: 21,
     borderRadius: 10,
     height: 40,
@@ -117,14 +117,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   startButtonBox: {
-      borderWidth:1,
-      borderColor:'white',
-      alignSelf: 'center',
-      justifyContent: 'center',
-      width: '100%',
-      height: 40,
-      borderRadius: 10,
-    },
+    borderWidth: 1,
+    borderColor: 'white',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: 40,
+    borderRadius: 10,
+  },
   hintModalBox: {
     backgroundColor: '#F5F5F5',
     justifyContent: 'center',
@@ -133,13 +133,12 @@ const styles = StyleSheet.create({
     width: '85%',
     height: '70%',
     borderRadius: 20,
-
   },
   hintModalBackground: {
     backgroundColor: 'rgba(0, 0, 0, 0)',
-    flex:1,
+    flex: 1,
   },
- popModalBox: {
+  popModalBox: {
     backgroundColor: '#F5F5F5',
     justifyContent: 'center',
     alignItems: 'center',
@@ -147,11 +146,11 @@ const styles = StyleSheet.create({
     width: '85%',
     height: '25%',
     borderRadius: 20,
-    marginBottom:300,
+    marginBottom: 300,
   },
   popModalBackground: {
     backgroundColor: '#F5F5F5',
-    height:Dimensions.get('window').height+StatusBar.currentHeight,
+    height: Dimensions.get('window').height + StatusBar.currentHeight,
   },
   wrongAnsModalBox: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
@@ -176,13 +175,13 @@ const styles = StyleSheet.create({
     fontSize: 35,
   },
   titleText: {
-      fontFamily: THEME.titleFont,
-      color: THEME.textColor,
-      fontSize: 35,
-      textAlign:'center',
-      alignSelf:'center',
-      marginVertical:'3%',
-    },
+    fontFamily: THEME.titleFont,
+    color: THEME.textColor,
+    fontSize: 35,
+    textAlign: 'center',
+    alignSelf: 'center',
+    marginVertical: '3%',
+  },
   buttonText: {
     fontFamily: THEME.buttonFont,
     color: THEME.lightBeige,
@@ -222,76 +221,76 @@ const styles = StyleSheet.create({
     fontFamily: THEME.basicFont,
     color: 'white',
     fontSize: 25,
-    textAlign:'center',
+    textAlign: 'center',
   },
   hintText: {
     fontFamily: THEME.basicFont,
     color: THEME.textColor,
     fontSize: 20,
-    textAlign:'center',
+    textAlign: 'center',
   },
   popText: {
-      fontFamily: THEME.basicFont,
-      color: THEME.textColor,
-      fontSize: 40,
-      textAlign:'center',
-    },
+    fontFamily: THEME.basicFont,
+    color: THEME.textColor,
+    fontSize: 40,
+    textAlign: 'center',
+  },
   timerText: {
     fontFamily: THEME.basicFont,
     color: THEME.textColor,
     fontSize: 20,
   },
-  nickNameText:{
-      fontFamily: THEME.plainFont,
-      color: 'white',
-      fontSize: 18,
-      textAlign:'right',
-      borderBottomWidth:1,
-      width:'80%',
-      borderColor:'white',
+  nickNameText: {
+    fontFamily: THEME.plainFont,
+    color: 'white',
+    fontSize: 18,
+    textAlign: 'right',
+    borderBottomWidth: 1,
+    width: '80%',
+    borderColor: 'white',
   },
-  bgImage:{
-    width:'100%',
-    height:'100%',
+  bgImage: {
+    width: '100%',
+    height: '100%',
   },
-  boxBgImage:{
-    width:'100%',
-    height:'100%',
+  boxBgImage: {
+    width: '100%',
+    height: '100%',
     borderRadius: 10,
     overflow: 'hidden',
   },
-  questImage:{
-      marginVertical:'5%',
-      width:Dimensions.get("window").width*0.4,
-      height:Dimensions.get('window').height*0.1,
-      borderRadius: 10,
-      resizeMode:'contain',
-    },
-  questImage2:{
-          borderRadius: 10,
-          height:Dimensions.get('window').height*0.3,
-          resizeMode:'stretch',
-        },
-        webtoonImage:{
-          width:'100%',
-          resizeMethod:'resize',
-          alignSelf:'center',
-          margin:0,
-          overflow: 'hidden',
-        },
-  hintImage:{
-      marginVertical:'10%',
-      width:Dimensions.get('window').width*0.5,
-      height:Dimensions.get('window').height*0.3,
-      alignSelf:'center',
-      borderRadius: 10,
-      resizeMode:'stretch',
-   },
-   iconImage:{
-        resizeMode:'contain',
-        alignSelf:'center',
-        height:'80%',
-        resizeMethod:'scale',
-   }
+  questImage: {
+    marginVertical: '5%',
+    width: Dimensions.get('window').width * 0.4,
+    height: Dimensions.get('window').height * 0.1,
+    borderRadius: 10,
+    resizeMode: 'contain',
+  },
+  questImage2: {
+    borderRadius: 10,
+    height: Dimensions.get('window').height * 0.3,
+    resizeMode: 'stretch',
+  },
+  webtoonImage: {
+    width: '100%',
+    resizeMethod: 'resize',
+    alignSelf: 'center',
+    margin: 0,
+    overflow: 'hidden',
+  },
+  hintImage: {
+    marginVertical: '10%',
+    width: Dimensions.get('window').width * 0.5,
+    height: Dimensions.get('window').height * 0.3,
+    alignSelf: 'center',
+    borderRadius: 10,
+    resizeMode: 'stretch',
+  },
+  iconImage: {
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    height: '80%',
+    resizeMethod: 'scale',
+  },
 })
 export default styles
