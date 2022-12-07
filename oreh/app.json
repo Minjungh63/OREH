@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "OREH",
-    "slug": "OREH",
+    "name": "GyeongseongDiary1919",
+    "slug": "GyeongseongDiary1919",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash.png"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -15,11 +15,10 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-
     "ios": {
       "icon": "./assets/app-icon.png",
       "supportsTablet": true,
-      "bundleIdentifier": "com.oreh.oreh",
+      "bundleIdentifier": "com.OREH.GyeongseongDiary1919",
       "buildNumber": "1.0.0"
     },
     "android": {
@@ -27,16 +26,12 @@
         "foregroundImage": "./assets/app-icon.png",
         "backgroundColor": "#6D4F3E"
       },
-      "package": "com.oreh.oreh",
+      "package": "com.OREH.GyeongseongDiary1919",
       "versionCode": 1
     },
-    "web": {
-      "favicon": "./assets/app-icon.png"
-    },
     "extra": {
-
       "eas": {
-        "projectId": "2d6cce5f-abd6-447b-ab2d-f789b7c2881d"
+        "projectId": "472d96b8-3c32-4909-a480-3eab16ed2acf"
       }
     }
   }
