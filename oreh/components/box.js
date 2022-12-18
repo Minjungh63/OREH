@@ -12,6 +12,7 @@ import styles from '../pages/styles.js'
 import { THEME } from '../theme'
 import { STRING } from '../string'
 import { AntDesign } from '@expo/vector-icons'
+import ImageModal from 'react-native-image-modal'
 
 export const Box = ({
   hintNum,
@@ -83,16 +84,22 @@ export const Box = ({
                       backgroundColor: 'rgba(0, 0, 0, 0.6)',
                       borderRadius: 0,
                       height: Dimensions.get('window').height * 0.15,
+                      width: Dimensions.get('window').width * 0.7,
                       marginBottom: '8%',
-                      alignContent: 'center',
-                      alignItems: 'center',
+                      alignSelf: 'center',
                       justifyContent: 'center',
                     }}
                   >
-                    <Image
+                    <ImageModal
+                      resizeMode="contain"
+                      imageBackgroundColor="rgba(0, 0, 0, 0)"
                       style={[
                         styles.questImage,
-                        { height: Dimensions.get('window').height * 0.15 },
+                        {
+                          flexDirection: 'row',
+                          height: Dimensions.get('window').height * 0.1,
+                          marginHorizontal: '20%',
+                        },
                       ]}
                       source={img}
                     />
@@ -125,11 +132,15 @@ export const Box = ({
                     resizeMode: 'contain',
                   }}
                 >
-                  <Image
+                  <ImageModal
+                    resizeMode="contain"
+                    imageBackgroundColor="rgba(0, 0, 0, 0)"
                     style={img ? styles.questImage : styles.questImage2}
                     source={img2}
                   />
-                  <Image
+                  <ImageModal
+                    resizeMode="contain"
+                    imageBackgroundColor="rgba(0, 0, 0, 0)"
                     style={img ? styles.questImage : styles.questImage2}
                     source={img3}
                   />
@@ -142,8 +153,7 @@ export const Box = ({
                       img
                         ? {
                             height: Dimensions.get('window').height * 0.15,
-                            alignContent: 'center',
-                            alignItems: 'center',
+                            alignSelf: 'center',
                             justifyContent: 'flex-start',
                           }
                         : {
@@ -154,7 +164,9 @@ export const Box = ({
                           }
                     }
                   >
-                    <Image
+                    <ImageModal
+                      resizeMode="contain"
+                      imageBackgroundColor="rgba(0, 0, 0, 0)"
                       style={
                         img
                           ? [
@@ -176,15 +188,19 @@ export const Box = ({
                 (img4 && (
                   <View
                     style={{
-                      marginTop: '5%',
+                      marginTop: '2%',
                       height: Dimensions.get('window').height * 0.3,
-                      alignItems: 'center',
+                      alignSelf: 'center',
                     }}
                   >
-                    <Image
+                    <ImageModal
+                      resizeMode="contain"
+                      imageBackgroundColor="rgba(0,0,0,0)"
                       style={[
                         styles.questImage2,
-                        { width: Dimensions.get('window').width * 0.4 },
+                        {
+                          width: Dimensions.get('window').width * 0.4,
+                        },
                       ]}
                       source={img4}
                     />
@@ -195,10 +211,12 @@ export const Box = ({
                     style={{
                       marginTop: '5%',
                       height: Dimensions.get('window').height * 0.3,
-                      alignItems: 'center',
+                      alignSelf: 'center',
                     }}
                   >
-                    <Image
+                    <ImageModal
+                      resizeMode="contain"
+                      imageBackgroundColor="rgba(0, 0, 0, 0)"
                       style={[
                         styles.questImage2,
                         {
@@ -419,9 +437,20 @@ export const Box = ({
                 ))}
             </View>
           ) : (
-            <View>
+            <View
+              style={{
+                marginVertical: '10%',
+                justifyContent: 'space-around',
+              }}
+            >
               {pressed === 1 ? (
-                <View style={{ marginTop: '30%' }}>
+                <View
+                  style={{
+                    height: Dimensions.get('window').height * 0.8 * 0.7,
+                    paddingBottom: '10%',
+                    justifyContent: 'center',
+                  }}
+                >
                   <Text style={styles.noticeText}>{text}</Text>
                   <Text style={[styles.noticeText, { textAlign: 'left' }]}>
                     {text2}
@@ -434,7 +463,7 @@ export const Box = ({
                     {
                       textAlign: 'left',
                       fontFamily: THEME.titleFont,
-                      marginTop: '22%',
+                      height: Dimensions.get('window').height * 0.8 * 0.7,
                     },
                   ]}
                 >
@@ -445,6 +474,7 @@ export const Box = ({
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
+                  height: Dimensions.get('window').height * 0.8 * 0.1,
                 }}
               >
                 {pressed === 2 ? (
@@ -459,14 +489,20 @@ export const Box = ({
                     />
                   </Pressable>
                 ) : (
-                  <View></View>
+                  <>
+                    <View></View>
+                    <Pressable
+                      style={{ resizeMode: 'contain' }}
+                      onPress={() => setPressed(2)}
+                    >
+                      <AntDesign
+                        name="right"
+                        size={26}
+                        color={THEME.buttonColor}
+                      />
+                    </Pressable>
+                  </>
                 )}
-                <Pressable
-                  style={{ resizeMode: 'contain' }}
-                  onPress={() => setPressed(2)}
-                >
-                  <AntDesign name="right" size={26} color={THEME.buttonColor} />
-                </Pressable>
               </View>
             </View>
           )}

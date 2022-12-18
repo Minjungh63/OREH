@@ -1,21 +1,20 @@
 LogBox.ignoreLogs(['Warning: ...']) // Ignore log notification by message
 LogBox.ignoreAllLogs() //Ignore all log notifications
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import {
   View,
   Text,
   LogBox,
-  SafeAreaView,
   ImageBackground,
   Image,
   TextInput,
   Dimensions,
   Pressable,
   StatusBar,
+  BackHandler,
+  Alert,
 } from 'react-native'
 import styles from './styles'
-import { Button } from '../components/button'
-import { Box } from '../components/box'
 import { STRING } from '../string'
 import { THEME } from '../theme'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -23,6 +22,25 @@ import UserContext from '../service/UserContext'
 import { ModalWindow } from '../components/modal'
 
 const StartView = ({ navigation }) => {
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert('', '앱을 종료하시겠습니까?', [
+        {
+          text: '취소',
+          onPress: () => null,
+        },
+        { text: '종료', onPress: () => BackHandler.exitApp() },
+      ])
+      return true
+    }
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    )
+
+    return () => backHandler.remove()
+  }, [])
   const userContext = useContext(UserContext)
   const [name, setName] = useState('')
   const [isEnter, setIsEnter] = useState(false)
@@ -97,6 +115,7 @@ const StartView = ({ navigation }) => {
                   style={styles.nickNameText}
                   onChangeText={(e) => setName(e)}
                   value={name}
+                  maxLength={9}
                   placeholder="닉네임을 입력하시오."
                   placeholderTextColor={'#C2BEBE'}
                 />

@@ -8,14 +8,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   questContainer: {
-    height: Dimensions.get('window').height * 0.6,
+    height: Dimensions.get('window').height * 0.8,
     paddingHorizontal: '8%',
     justifyContent: 'space-evenly',
   },
   textBox: {
     flex: 0.8,
     paddingHorizontal: 10,
-    paddingVertical: 10,
   },
   questBox: {
     flex: 0.65,
@@ -251,7 +250,7 @@ const styles = StyleSheet.create({
   },
   bgImage: {
     width: '100%',
-    height: '100%',
+    flex: 1,
   },
   boxBgImage: {
     width: '100%',
@@ -282,8 +281,9 @@ const styles = StyleSheet.create({
     marginVertical: '10%',
     width: Dimensions.get('window').width * 0.5,
     height: Dimensions.get('window').height * 0.3,
-    alignSelf: 'center',
+    marginHorizontal: '5%',
     borderRadius: 10,
+    alignSelf: 'center',
     resizeMode: 'stretch',
   },
   iconImage: {

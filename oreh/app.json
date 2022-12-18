@@ -19,7 +19,10 @@
       "icon": "./assets/app-icon.png",
       "supportsTablet": true,
       "bundleIdentifier": "com.OREH.GyeongseongDiary1919",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.0",
+      "config":{
+        "usesNonExemptEncryption":false
+      }
     },
     "android": {
       "adaptiveIcon": {

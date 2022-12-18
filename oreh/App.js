@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import HomeView from './pages/HomeView'
 import StartView from './pages/StartView'
 import Quest1View from './pages/Quest1View'

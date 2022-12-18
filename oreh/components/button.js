@@ -9,6 +9,7 @@ export const Button = ({
   viewName,
   inputAns,
   ans,
+  ans_1,
   setIsWrongAns,
   tel,
 }) => {
@@ -16,14 +17,14 @@ export const Button = ({
   const [pressed, setPressed] = useState(false)
   const EnterAns = () => {
     if (text === STRING.quest_buttonText) {
-      if (ans === inputAns.trim()) {
+      if (ans === inputAns.trim() || ans_1 === inputAns.trim()) {
         userContext.setRecordList([
           ...userContext.recordList,
           userContext.timer,
         ])
-          if(tel){
-              Linking.openURL(`tel:07045717849`)
-          }
+        if (tel) {
+          Linking.openURL(`tel:07045717849`)
+        }
         navigation.navigate(viewName)
       } else {
         setIsWrongAns(true)
