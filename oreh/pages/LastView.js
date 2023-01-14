@@ -44,9 +44,7 @@ const LastView = () => {
     Linking.openURL('https://link-page.kakao.com/goto_view?series_id=57569907')
   }
   const contact = () => {
-    Linking.openURL(
-      'https://docs.google.com/forms/d/e/1FAIpQLSe1sk7zsxqYLPbpZh3Ma1xl1RieeRGybb5YGpVxPSHbKe8qNQ/viewform?usp=sf_link',
-    )
+    Linking.openURL('https://forms.gle/bCN4ybSUUxsv7FfF9')
   }
   return (
     <KeyboardAwareScrollView

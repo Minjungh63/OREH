@@ -6,7 +6,7 @@ export const HintButton = () => {
     <Pressable
       style={{ alignItems: 'flex-end' }}
       onPress={() => {
-        Linking.openURL('https://open.kakao.com/o/s6HWcLQe')
+        Linking.openURL('http://pf.kakao.com/_SEmJxj')
       }}
     >
     <Ionicons name="chatbubble" size={28} color="white" />
