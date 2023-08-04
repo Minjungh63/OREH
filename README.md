@@ -26,4 +26,4 @@ Expo 앱을 설치한 후, 아래의 QR코드를 스캔하면 앱을 확인할 �
 
 expo 링크는 exp://exp.host/@minjungjung/GyeongseongDiary1919?release-channel=default 입니다.
 ## 랜딩 페이지 및 시현 영상
-[경성일기:1919 시현 영상](https://www.notion.so/1919-d0008ae563e6414299da7a3c7d122452?pvs=4)
+[경성일기:1919 시현 영상](https://drive.google.com/file/d/1iGxXDZTN8J2rkG058PrhwEzznJwhBVTd/view?usp=drive_link)
